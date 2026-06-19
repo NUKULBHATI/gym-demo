@@ -16,6 +16,7 @@
             --gray-dark: #1A1A1A;
             --gray-mid: #2A2A2A;
             --gray-light: #888888;
+            --black: #000000;
         }
 
         * {
@@ -219,10 +220,18 @@
             transform: rotate(45deg) translate(5px, 5px);
         }
         .hamburger.active span:nth-child(2) {
-            opacity: 0;
+            opacity: 1;
         }
         .hamburger.active span:nth-child(3) {
             transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .hamburger span {
+            background: var(--black);
+        }
+
+        .dark-mode .hamburger span {
+             background: var(--white);
         }
 
         .hero {
