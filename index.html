@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PowerHouse Fitness | Transform Your Body. Elevate Your Life.</title>
-    <meta name="description" content="Premium gym and fitness center offering world-class training, equipment, and programs.">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description"
+        content="Premium gym and fitness center offering world-class training, equipment, and programs.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -16,6 +20,7 @@
             --gray-dark: #1A1A1A;
             --gray-mid: #2A2A2A;
             --gray-light: #888888;
+
         }
 
         * {
@@ -38,69 +43,148 @@
         ::-webkit-scrollbar {
             width: 8px;
         }
+
         ::-webkit-scrollbar-track {
             background: var(--matte-black);
         }
+
         ::-webkit-scrollbar-thumb {
             background: var(--electric-blue);
             border-radius: 4px;
         }
 
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         @keyframes slideInLeft {
-            from { opacity: 0; transform: translateX(-60px); }
-            to { opacity: 1; transform: translateX(0); }
+            from {
+                opacity: 0;
+                transform: translateX(-60px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         @keyframes slideInRight {
-            from { opacity: 0; transform: translateX(60px); }
-            to { opacity: 1; transform: translateX(0); }
+            from {
+                opacity: 0;
+                transform: translateX(60px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         @keyframes glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(0, 191, 255, 0.3); }
-            50% { box-shadow: 0 0 40px rgba(0, 191, 255, 0.6); }
+
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(0, 191, 255, 0.6);
+            }
         }
 
         @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         @keyframes shimmer {
-            0% { background-position: -200% 0; }
-            100% { background-position: 200% 0; }
+            0% {
+                background-position: -200% 0;
+            }
+
+            100% {
+                background-position: 200% 0;
+            }
         }
 
         .animate-on-scroll {
             opacity: 0;
             transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
+
         .animate-on-scroll.visible {
             opacity: 1;
         }
-        .animate-up { transform: translateY(40px); }
-        .animate-up.visible { transform: translateY(0); }
-        .animate-left { transform: translateX(-40px); }
-        .animate-left.visible { transform: translateX(0); }
-        .animate-right { transform: translateX(40px); }
-        .animate-right.visible { transform: translateX(0); }
-        .animate-scale { transform: scale(0.9); }
-        .animate-scale.visible { transform: scale(1); }
+
+        .animate-up {
+            transform: translateY(40px);
+        }
+
+        .animate-up.visible {
+            transform: translateY(0);
+        }
+
+        .animate-left {
+            transform: translateX(-40px);
+        }
+
+        .animate-left.visible {
+            transform: translateX(0);
+        }
+
+        .animate-right {
+            transform: translateX(40px);
+        }
+
+        .animate-right.visible {
+            transform: translateX(0);
+        }
+
+        .animate-scale {
+            transform: scale(0.9);
+        }
+
+        .animate-scale.visible {
+            transform: scale(1);
+        }
 
         .navbar {
             position: fixed;
@@ -199,7 +283,7 @@
             box-shadow: 0 0 30px rgba(0, 191, 255, 0.4);
         }
 
-               .hamburger {
+        .hamburger {
             display: none;
             flex-direction: column;
             gap: 5px;
@@ -220,7 +304,7 @@
         }
 
         .hamburger.active span:nth-child(2) {
-            opacity: 0;
+            opacity: 1;
         }
 
         .hamburger.active span:nth-child(3) {
@@ -228,9 +312,9 @@
         }
 
         .dark-mode .hamburger span {
-            background: #000000;
+            background: var(--white);
         }
-        
+
         .hero {
             height: 100vh;
             position: relative;
@@ -246,8 +330,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(10,10,10,0.8) 0%, rgba(10,10,10,0.6) 50%, rgba(0,191,255,0.1) 100%),
-                        url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=80') center/cover;
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.8) 0%, rgba(10, 10, 10, 0.6) 50%, rgba(0, 191, 255, 0.1) 100%),
+                url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=80') center/cover;
             z-index: -1;
         }
 
@@ -355,7 +439,7 @@
             font-size: 16px;
             text-decoration: none;
             transition: all 0.3s ease;
-            border: 2px solid rgba(255,255,255,0.3);
+            border: 2px solid rgba(255, 255, 255, 0.3);
             display: inline-flex;
             align-items: center;
             gap: 10px;
@@ -477,7 +561,7 @@
             border-radius: 20px;
             overflow: hidden;
             transition: all 0.4s ease;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .facility-card:hover {
@@ -536,7 +620,7 @@
         }
 
         .highlight-card {
-            background: rgba(255,255,255,0.03);
+            background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(0, 191, 255, 0.15);
             border-radius: 20px;
             padding: 40px 30px;
@@ -615,7 +699,7 @@
             border-radius: 20px;
             padding: 40px;
             position: relative;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.4s ease;
         }
 
@@ -670,7 +754,7 @@
         }
 
         .cta-section {
-            background: linear-gradient(135deg, rgba(0,191,255,0.1) 0%, rgba(0,245,255,0.05) 100%);
+            background: linear-gradient(135deg, rgba(0, 191, 255, 0.1) 0%, rgba(0, 245, 255, 0.05) 100%);
             text-align: center;
             padding: 120px 0;
             position: relative;
@@ -684,7 +768,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(0,191,255,0.05) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(0, 191, 255, 0.05) 0%, transparent 70%);
             animation: shimmer 8s linear infinite;
         }
 
@@ -727,7 +811,7 @@
             width: 100%;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
         }
 
         .about-img-main img {
@@ -748,7 +832,7 @@
             border-radius: 20px;
             overflow: hidden;
             border: 5px solid var(--matte-black);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
         }
 
         .about-img-secondary img {
@@ -812,32 +896,37 @@
             margin-top: 60px;
         }
 
-        .mission-card, .vision-card {
+        .mission-card,
+        .vision-card {
             background: var(--gray-dark);
             border-radius: 20px;
             padding: 50px;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.4s ease;
         }
 
-        .mission-card:hover, .vision-card:hover {
+        .mission-card:hover,
+        .vision-card:hover {
             border-color: var(--electric-blue);
             transform: translateY(-5px);
         }
 
-        .mission-card i, .vision-card i {
+        .mission-card i,
+        .vision-card i {
             font-size: 40px;
             color: var(--electric-blue);
             margin-bottom: 20px;
         }
 
-        .mission-card h3, .vision-card h3 {
+        .mission-card h3,
+        .vision-card h3 {
             font-size: 28px;
             font-weight: 800;
             margin-bottom: 15px;
         }
 
-        .mission-card p, .vision-card p {
+        .mission-card p,
+        .vision-card p {
             font-size: 16px;
             color: var(--gray-light);
             line-height: 1.8;
@@ -854,7 +943,7 @@
             border-radius: 20px;
             overflow: hidden;
             transition: all 0.4s ease;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .team-card:hover {
@@ -944,9 +1033,18 @@
             aspect-ratio: 1;
         }
 
-        .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
-        .gallery-item:nth-child(4) { grid-column: span 2; }
-        .gallery-item:nth-child(5) { grid-row: span 2; }
+        .gallery-item:nth-child(1) {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .gallery-item:nth-child(4) {
+            grid-column: span 2;
+        }
+
+        .gallery-item:nth-child(5) {
+            grid-row: span 2;
+        }
 
         .gallery-item img {
             width: 100%;
@@ -989,7 +1087,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.95);
+            background: rgba(0, 0, 0, 0.95);
             z-index: 2000;
             align-items: center;
             justify-content: center;
@@ -1032,7 +1130,7 @@
             border-radius: 20px;
             padding: 50px 30px;
             text-align: center;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
@@ -1045,7 +1143,7 @@
 
         .pricing-card.popular {
             border-color: var(--electric-blue);
-            background: linear-gradient(135deg, var(--gray-dark) 0%, rgba(0,191,255,0.1) 100%);
+            background: linear-gradient(135deg, var(--gray-dark) 0%, rgba(0, 191, 255, 0.1) 100%);
             transform: scale(1.05);
         }
 
@@ -1088,7 +1186,7 @@
 
         .pricing-features li {
             padding: 12px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             font-size: 15px;
             color: var(--gray-light);
             display: flex;
@@ -1112,7 +1210,7 @@
             border-radius: 20px;
             overflow: hidden;
             transition: all 0.4s ease;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .program-card:hover {
@@ -1186,7 +1284,7 @@
             border-radius: 15px;
             padding: 30px;
             text-align: center;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.3s ease;
         }
 
@@ -1216,7 +1314,7 @@
             background: var(--gray-dark);
             border-radius: 20px;
             padding: 50px;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .form-group {
@@ -1237,7 +1335,7 @@
             width: 100%;
             padding: 15px 20px;
             background: var(--matte-black);
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             color: var(--white);
             font-size: 15px;
@@ -1287,7 +1385,7 @@
             border-radius: 15px;
             margin-bottom: 15px;
             overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .faq-question {
@@ -1345,7 +1443,7 @@
             background: var(--gray-dark);
             border-radius: 20px;
             padding: 50px;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .bmi-result {
@@ -1384,7 +1482,7 @@
             background: var(--gray-dark);
             border-radius: 20px;
             overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.4s ease;
         }
 
@@ -1415,7 +1513,7 @@
             position: absolute;
             bottom: 10px;
             left: 10px;
-            background: rgba(0,0,0,0.7);
+            background: rgba(0, 0, 0, 0.7);
             padding: 5px 15px;
             border-radius: 20px;
             font-size: 12px;
@@ -1486,7 +1584,7 @@
             background: var(--gray-dark);
             border-radius: 20px;
             padding: 40px;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.4s ease;
         }
 
@@ -1518,7 +1616,7 @@
         .footer {
             background: var(--gray-dark);
             padding: 80px 0 30px;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .footer-grid {
@@ -1553,7 +1651,7 @@
         .footer-social a {
             width: 45px;
             height: 45px;
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -1561,7 +1659,7 @@
             color: var(--white);
             text-decoration: none;
             transition: all 0.3s ease;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .footer-social a:hover {
@@ -1624,7 +1722,7 @@
             flex: 1;
             padding: 12px 20px;
             background: var(--matte-black);
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 50px;
             color: var(--white);
             font-size: 14px;
@@ -1653,7 +1751,7 @@
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
             padding-top: 30px;
             display: flex;
             justify-content: space-between;
@@ -1707,6 +1805,7 @@
         }
 
         @media (max-width: 1200px) {
+
             .facilities-grid,
             .highlights-grid,
             .pricing-grid,
@@ -1718,6 +1817,7 @@
             .tips-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
             .counters-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -1727,6 +1827,7 @@
             .hamburger {
                 display: flex;
             }
+
             .nav-links {
                 position: fixed;
                 top: 0;
@@ -1743,32 +1844,40 @@
                 z-index: 1000;
                 padding: 80px 40px;
             }
+
             .nav-links.active {
                 right: 0;
             }
+
             .nav-links a {
                 font-size: 18px;
             }
+
             .hero-title {
                 font-size: 40px;
             }
+
             .hero-buttons {
                 flex-direction: column;
             }
+
             .section-title {
                 font-size: 32px;
             }
+
             .about-grid,
             .contact-grid,
             .mission-vision-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
+
             .about-features,
             .contact-info-grid,
             .form-row {
                 grid-template-columns: 1fr;
             }
+
             .facilities-grid,
             .highlights-grid,
             .pricing-grid,
@@ -1782,14 +1891,17 @@
             .footer-grid {
                 grid-template-columns: 1fr;
             }
+
             .pricing-card.popular {
                 transform: scale(1);
             }
+
             .footer-bottom {
                 flex-direction: column;
                 gap: 20px;
                 text-align: center;
             }
+
             .gallery-item:nth-child(1),
             .gallery-item:nth-child(4),
             .gallery-item:nth-child(5) {
@@ -1801,6 +1913,7 @@
         .page-section {
             display: none;
         }
+
         .page-section.active {
             display: block;
             animation: fadeIn 0.5s ease;
@@ -1820,7 +1933,9 @@
             box-shadow: 0 0 30px rgba(0, 191, 255, 0.1);
         }
     </style>
+<base target="_blank">
 </head>
+
 <body>
     <nav class="navbar" id="navbar">
         <div class="container">
@@ -1853,7 +1968,8 @@
             <div class="hero-content">
                 <p class="hero-subtitle">Welcome to PowerHouse Fitness</p>
                 <h1 class="hero-title">Transform Your Body.<br><span>Elevate Your Life.</span></h1>
-                <p class="hero-desc">Experience world-class training, state-of-the-art equipment, and a community that pushes you to be your best.</p>
+                <p class="hero-desc">Experience world-class training, state-of-the-art equipment, and a community that
+                    pushes you to be your best.</p>
                 <div class="hero-buttons">
                     <a href="javascript:void(0)" class="btn-primary" onclick="showPage('membership', event)">
                         <i class="fas fa-arrow-right"></i> Join Now
@@ -1905,62 +2021,74 @@
                 <div class="facilities-grid">
                     <div class="facility-card animate-on-scroll animate-up">
                         <div class="facility-img">
-                            <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=80" alt="Strength Zone">
+                            <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=80"
+                                alt="Strength Zone">
                         </div>
                         <div class="facility-content">
                             <i class="fas fa-dumbbell"></i>
                             <h3>Strength Zone</h3>
-                            <p>Over 100 pieces of premium strength equipment including free weights, machines, and functional training areas.</p>
+                            <p>Over 100 pieces of premium strength equipment including free weights, machines, and
+                                functional training areas.</p>
                         </div>
                     </div>
                     <div class="facility-card animate-on-scroll animate-up">
                         <div class="facility-img">
-                            <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=600&q=80" alt="Cardio Theater">
+                            <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=600&q=80"
+                                alt="Cardio Theater">
                         </div>
                         <div class="facility-content">
                             <i class="fas fa-heartbeat"></i>
                             <h3>Cardio Theater</h3>
-                            <p>State-of-the-art cardio machines with personal entertainment screens and immersive workout experiences.</p>
+                            <p>State-of-the-art cardio machines with personal entertainment screens and immersive
+                                workout experiences.</p>
                         </div>
                     </div>
                     <div class="facility-card animate-on-scroll animate-up">
                         <div class="facility-img">
-                            <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=600&q=80" alt="Yoga Studio">
+                            <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=600&q=80"
+                                alt="Yoga Studio">
                         </div>
                         <div class="facility-content">
                             <i class="fas fa-spa"></i>
                             <h3>Yoga and Pilates Studio</h3>
-                            <p>Dedicated studio with premium flooring, ambient lighting, and all necessary props for mind-body wellness.</p>
+                            <p>Dedicated studio with premium flooring, ambient lighting, and all necessary props for
+                                mind-body wellness.</p>
                         </div>
                     </div>
                     <div class="facility-card animate-on-scroll animate-up">
                         <div class="facility-img">
-                            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&q=80" alt="HIIT Zone">
+                            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&q=80"
+                                alt="HIIT Zone">
                         </div>
                         <div class="facility-content">
                             <i class="fas fa-fire"></i>
                             <h3>HIIT and CrossFit Zone</h3>
-                            <p>Specialized area for high-intensity training with battle ropes, kettlebells, plyo boxes, and more.</p>
+                            <p>Specialized area for high-intensity training with battle ropes, kettlebells, plyo boxes,
+                                and more.</p>
                         </div>
                     </div>
                     <div class="facility-card animate-on-scroll animate-up">
                         <div class="facility-img">
-                            <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=600&q=80" alt="Swimming Pool">
+                            <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=600&q=80"
+                                alt="Swimming Pool">
                         </div>
                         <div class="facility-content">
                             <i class="fas fa-swimming-pool"></i>
                             <h3>Swimming Pool</h3>
-                            <p>Olympic-sized heated pool with dedicated lanes for swimming, aqua aerobics, and relaxation.</p>
+                            <p>Olympic-sized heated pool with dedicated lanes for swimming, aqua aerobics, and
+                                relaxation.</p>
                         </div>
                     </div>
                     <div class="facility-card animate-on-scroll animate-up">
                         <div class="facility-img">
-                            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80" alt="Recovery Zone">
+                            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80"
+                                alt="Recovery Zone">
                         </div>
                         <div class="facility-content">
                             <i class="fas fa-bed"></i>
                             <h3>Recovery and Spa</h3>
-                            <p>Sauna, steam room, massage therapy, and recovery tools to help your body heal and perform.</p>
+                            <p>Sauna, steam room, massage therapy, and recovery tools to help your body heal and
+                                perform.</p>
                         </div>
                     </div>
                 </div>
@@ -2029,12 +2157,16 @@
                 <div class="testimonials-grid">
                     <div class="testimonial-card animate-on-scroll animate-up">
                         <div class="stars">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
                         <div class="testimonial-quote">"</div>
-                        <p class="testimonial-text">PowerHouse completely transformed my approach to fitness. The trainers are incredibly knowledgeable and the community keeps me motivated every single day.</p>
+                        <p class="testimonial-text">PowerHouse completely transformed my approach to fitness. The
+                            trainers are incredibly knowledgeable and the community keeps me motivated every single day.
+                        </p>
                         <div class="testimonial-author">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Member">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80"
+                                alt="Member">
                             <div class="testimonial-author-info">
                                 <h4>James Mitchell</h4>
                                 <span>Lost 45 lbs in 6 months</span>
@@ -2043,12 +2175,15 @@
                     </div>
                     <div class="testimonial-card animate-on-scroll animate-up">
                         <div class="stars">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
                         <div class="testimonial-quote">"</div>
-                        <p class="testimonial-text">The facilities are world-class and the personal training program helped me achieve results I never thought possible. Best gym I have ever been to.</p>
+                        <p class="testimonial-text">The facilities are world-class and the personal training program
+                            helped me achieve results I never thought possible. Best gym I have ever been to.</p>
                         <div class="testimonial-author">
-                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Member">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80"
+                                alt="Member">
                             <div class="testimonial-author-info">
                                 <h4>Sarah Anderson</h4>
                                 <span>Gained 15 lbs muscle</span>
@@ -2057,12 +2192,15 @@
                     </div>
                     <div class="testimonial-card animate-on-scroll animate-up">
                         <div class="stars">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
                         <div class="testimonial-quote">"</div>
-                        <p class="testimonial-text">From the moment I walked in, I knew this was different. The atmosphere, the equipment, the people - everything is designed for success.</p>
+                        <p class="testimonial-text">From the moment I walked in, I knew this was different. The
+                            atmosphere, the equipment, the people - everything is designed for success.</p>
                         <div class="testimonial-author">
-                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80" alt="Member">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80"
+                                alt="Member">
                             <div class="testimonial-author-info">
                                 <h4>David Chen</h4>
                                 <span>Marathon runner now</span>
@@ -2077,7 +2215,8 @@
             <div class="container">
                 <div class="cta-content animate-on-scroll animate-up">
                     <h2 class="cta-title">Ready to Start Your Journey?</h2>
-                    <p class="cta-desc">Join thousands of members who have already transformed their lives. Your first week is on us.</p>
+                    <p class="cta-desc">Join thousands of members who have already transformed their lives. Your first
+                        week is on us.</p>
                     <a href="javascript:void(0)" class="btn-primary" onclick="showPage('membership', event)">
                         <i class="fas fa-rocket"></i> Get Started Today
                     </a>
@@ -2089,7 +2228,9 @@
     <!-- ABOUT PAGE -->
     <div id="about" class="page-section">
         <section class="hero" style="height: 60vh;">
-            <div class="hero-bg" style="background: linear-gradient(135deg, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.7) 100%), url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1920&q=80') center/cover;"></div>
+            <div class="hero-bg"
+                style="background: linear-gradient(135deg, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.7) 100%), url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1920&q=80') center/cover;">
+            </div>
             <div class="hero-content" style="padding-top: 80px;">
                 <p class="hero-subtitle">About PowerHouse</p>
                 <h1 class="hero-title" style="font-size: 56px;">Our <span>Story</span></h1>
@@ -2101,17 +2242,23 @@
                 <div class="about-grid">
                     <div class="about-images animate-on-scroll animate-left">
                         <div class="about-img-main">
-                            <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=800&q=80" alt="Gym Interior">
+                            <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=800&q=80"
+                                alt="Gym Interior">
                         </div>
                         <div class="about-img-secondary">
-                            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=500&q=80" alt="Training Session">
+                            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=500&q=80"
+                                alt="Training Session">
                         </div>
                     </div>
                     <div class="about-content animate-on-scroll animate-right">
                         <p class="section-tag" style="text-align: left; margin-bottom: 15px;">Our Story</p>
                         <h2>Building a <span>Community</span> of Champions</h2>
-                        <p>Founded in 2012, PowerHouse Fitness began with a simple mission: to create a gym that truly cares about its members. What started as a small facility with basic equipment has grown into one of the most respected fitness centers in the region.</p>
-                        <p>We believe that fitness is not just about physical strength, but about building mental resilience, fostering community, and creating lasting lifestyle changes. Our approach combines cutting-edge science with genuine human connection.</p>
+                        <p>Founded in 2012, PowerHouse Fitness began with a simple mission: to create a gym that truly
+                            cares about its members. What started as a small facility with basic equipment has grown
+                            into one of the most respected fitness centers in the region.</p>
+                        <p>We believe that fitness is not just about physical strength, but about building mental
+                            resilience, fostering community, and creating lasting lifestyle changes. Our approach
+                            combines cutting-edge science with genuine human connection.</p>
                         <div class="about-features">
                             <div class="about-feature">
                                 <i class="fas fa-check"></i>
@@ -2145,12 +2292,17 @@
                     <div class="mission-card animate-on-scroll animate-left">
                         <i class="fas fa-bullseye"></i>
                         <h3>Our Mission</h3>
-                        <p>To empower every individual to achieve their fullest potential through world-class fitness facilities, expert guidance, and an unwavering commitment to their success. We strive to make fitness accessible, enjoyable, and transformative for people from all walks of life.</p>
+                        <p>To empower every individual to achieve their fullest potential through world-class fitness
+                            facilities, expert guidance, and an unwavering commitment to their success. We strive to
+                            make fitness accessible, enjoyable, and transformative for people from all walks of life.
+                        </p>
                     </div>
                     <div class="vision-card animate-on-scroll animate-right">
                         <i class="fas fa-eye"></i>
                         <h3>Our Vision</h3>
-                        <p>To become the leading fitness destination that inspires a global movement toward healthier, stronger, and more confident communities. We envision a world where everyone has the tools and support to live their best life through fitness.</p>
+                        <p>To become the leading fitness destination that inspires a global movement toward healthier,
+                            stronger, and more confident communities. We envision a world where everyone has the tools
+                            and support to live their best life through fitness.</p>
                     </div>
                 </div>
             </div>
@@ -2193,7 +2345,8 @@
                 <div class="team-grid">
                     <div class="team-card animate-on-scroll animate-up">
                         <div class="team-img">
-                            <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=400&q=80" alt="Trainer">
+                            <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=400&q=80"
+                                alt="Trainer">
                             <div class="team-social">
                                 <a href="#"><i class="fab fa-instagram"></i></a>
                                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -2203,12 +2356,14 @@
                         <div class="team-info">
                             <h3>Marcus Johnson</h3>
                             <span>Head Strength Coach</span>
-                            <p style="font-size: 13px; color: var(--gray-light); margin-top: 8px;">NASM-CPT, 15 years experience</p>
+                            <p style="font-size: 13px; color: var(--gray-light); margin-top: 8px;">NASM-CPT, 15 years
+                                experience</p>
                         </div>
                     </div>
                     <div class="team-card animate-on-scroll animate-up">
                         <div class="team-img">
-                            <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=400&q=80" alt="Trainer">
+                            <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=400&q=80"
+                                alt="Trainer">
                             <div class="team-social">
                                 <a href="#"><i class="fab fa-instagram"></i></a>
                                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -2218,12 +2373,14 @@
                         <div class="team-info">
                             <h3>Emma Rodriguez</h3>
                             <span>Yoga and Pilates Instructor</span>
-                            <p style="font-size: 13px; color: var(--gray-light); margin-top: 8px;">RYT-500, 10 years experience</p>
+                            <p style="font-size: 13px; color: var(--gray-light); margin-top: 8px;">RYT-500, 10 years
+                                experience</p>
                         </div>
                     </div>
                     <div class="team-card animate-on-scroll animate-up">
                         <div class="team-img">
-                            <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=400&q=80" alt="Trainer">
+                            <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=400&q=80"
+                                alt="Trainer">
                             <div class="team-social">
                                 <a href="#"><i class="fab fa-instagram"></i></a>
                                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -2233,12 +2390,14 @@
                         <div class="team-info">
                             <h3>Alex Thompson</h3>
                             <span>HIIT and CrossFit Specialist</span>
-                            <p style="font-size: 13px; color: var(--gray-light); margin-top: 8px;">CrossFit L3, 8 years experience</p>
+                            <p style="font-size: 13px; color: var(--gray-light); margin-top: 8px;">CrossFit L3, 8 years
+                                experience</p>
                         </div>
                     </div>
                     <div class="team-card animate-on-scroll animate-up">
                         <div class="team-img">
-                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80" alt="Trainer">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80"
+                                alt="Trainer">
                             <div class="team-social">
                                 <a href="#"><i class="fab fa-instagram"></i></a>
                                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -2248,7 +2407,8 @@
                         <div class="team-info">
                             <h3>Lisa Park</h3>
                             <span>Nutrition and Wellness Coach</span>
-                            <p style="font-size: 13px; color: var(--gray-light); margin-top: 8px;">MS Nutrition, 12 years experience</p>
+                            <p style="font-size: 13px; color: var(--gray-light); margin-top: 8px;">MS Nutrition, 12
+                                years experience</p>
                         </div>
                     </div>
                 </div>
@@ -2259,7 +2419,9 @@
     <!-- MEMBERSHIP PAGE -->
     <div id="membership" class="page-section">
         <section class="hero" style="height: 60vh;">
-            <div class="hero-bg" style="background: linear-gradient(135deg, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.7) 100%), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=80') center/cover;"></div>
+            <div class="hero-bg"
+                style="background: linear-gradient(135deg, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.7) 100%), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=80') center/cover;">
+            </div>
             <div class="hero-content" style="padding-top: 80px;">
                 <p class="hero-subtitle">Membership Plans</p>
                 <h1 class="hero-title" style="font-size: 56px;">Choose Your <span>Plan</span></h1>
@@ -2284,7 +2446,8 @@
                             <li><i class="fas fa-check"></i> 2 group classes/week</li>
                             <li><i class="fas fa-check"></i> Fitness assessment</li>
                         </ul>
-                        <a href="javascript:void(0)" class="btn-secondary" style="width: 100%; justify-content: center;" onclick="showPage('contact', event)">Get Started</a>
+                        <a href="javascript:void(0)" class="btn-secondary" style="width: 100%; justify-content: center;"
+                            onclick="showPage('contact', event)">Get Started</a>
                     </div>
                     <div class="pricing-card animate-on-scroll animate-up">
                         <h3>Quarterly</h3>
@@ -2296,7 +2459,8 @@
                             <li><i class="fas fa-check"></i> Unlimited classes</li>
                             <li><i class="fas fa-check"></i> 1 PT session/month</li>
                         </ul>
-                        <a href="javascript:void(0)" class="btn-secondary" style="width: 100%; justify-content: center;" onclick="showPage('contact', event)">Get Started</a>
+                        <a href="javascript:void(0)" class="btn-secondary" style="width: 100%; justify-content: center;"
+                            onclick="showPage('contact', event)">Get Started</a>
                     </div>
                     <div class="pricing-card popular animate-on-scroll animate-up">
                         <h3>Half-Yearly</h3>
@@ -2309,7 +2473,8 @@
                             <li><i class="fas fa-check"></i> 2 PT sessions/month</li>
                             <li><i class="fas fa-check"></i> Nutrition plan</li>
                         </ul>
-                        <a href="javascript:void(0)" class="btn-primary" style="width: 100%; justify-content: center;" onclick="showPage('contact', event)">Get Started</a>
+                        <a href="javascript:void(0)" class="btn-primary" style="width: 100%; justify-content: center;"
+                            onclick="showPage('contact', event)">Get Started</a>
                     </div>
                     <div class="pricing-card animate-on-scroll animate-up">
                         <h3>Annual</h3>
@@ -2322,7 +2487,8 @@
                             <li><i class="fas fa-check"></i> Body composition scan</li>
                             <li><i class="fas fa-check"></i> Exclusive events</li>
                         </ul>
-                        <a href="javascript:void(0)" class="btn-secondary" style="width: 100%; justify-content: center;" onclick="showPage('contact', event)">Get Started</a>
+                        <a href="javascript:void(0)" class="btn-secondary" style="width: 100%; justify-content: center;"
+                            onclick="showPage('contact', event)">Get Started</a>
                     </div>
                 </div>
             </div>
@@ -2346,7 +2512,8 @@
                             <input type="number" id="bmiWeight" placeholder="e.g. 70">
                         </div>
                     </div>
-                    <button class="btn-primary" style="width: 100%; justify-content: center; margin-top: 20px;" onclick="calculateBMI()">
+                    <button class="btn-primary" style="width: 100%; justify-content: center; margin-top: 20px;"
+                        onclick="calculateBMI()">
                         <i class="fas fa-calculator"></i> Calculate BMI
                     </button>
                     <div class="bmi-result" id="bmiResult">
@@ -2361,7 +2528,8 @@
             <div class="container">
                 <div class="cta-content animate-on-scroll animate-up">
                     <h2 class="cta-title">Not Sure Which Plan?</h2>
-                    <p class="cta-desc">Book a free consultation with our fitness experts to find the perfect plan for your goals.</p>
+                    <p class="cta-desc">Book a free consultation with our fitness experts to find the perfect plan for
+                        your goals.</p>
                     <a href="javascript:void(0)" class="btn-primary" onclick="showPage('contact', event)">
                         <i class="fas fa-calendar-check"></i> Book Free Consultation
                     </a>
@@ -2373,7 +2541,9 @@
     <!-- PROGRAMS PAGE -->
     <div id="programs" class="page-section">
         <section class="hero" style="height: 60vh;">
-            <div class="hero-bg" style="background: linear-gradient(135deg, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.7) 100%), url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1920&q=80') center/cover;"></div>
+            <div class="hero-bg"
+                style="background: linear-gradient(135deg, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.7) 100%), url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1920&q=80') center/cover;">
+            </div>
             <div class="hero-content" style="padding-top: 80px;">
                 <p class="hero-subtitle">Fitness Programs</p>
                 <h1 class="hero-title" style="font-size: 56px;">Expert <span>Programs</span></h1>
@@ -2390,27 +2560,32 @@
                 <div class="programs-grid">
                     <div class="program-card animate-on-scroll animate-up">
                         <div class="program-img">
-                            <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=600&q=80" alt="Strength Training">
+                            <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=600&q=80"
+                                alt="Strength Training">
                         </div>
                         <div class="program-content">
                             <span class="program-tag">Strength</span>
                             <h3>Strength Training</h3>
-                            <p>Build muscle, increase power, and develop functional strength with our comprehensive strength program.</p>
+                            <p>Build muscle, increase power, and develop functional strength with our comprehensive
+                                strength program.</p>
                         </div>
                     </div>
                     <div class="program-card animate-on-scroll animate-up">
                         <div class="program-img">
-                            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80" alt="Fat Loss">
+                            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80"
+                                alt="Fat Loss">
                         </div>
                         <div class="program-content">
                             <span class="program-tag">Weight Loss</span>
                             <h3>Fat Loss Program</h3>
-                            <p>Science-backed approach to burning fat while preserving muscle mass with personalized nutrition.</p>
+                            <p>Science-backed approach to burning fat while preserving muscle mass with personalized
+                                nutrition.</p>
                         </div>
                     </div>
                     <div class="program-card animate-on-scroll animate-up">
                         <div class="program-img">
-                            <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=600&q=80" alt="Muscle Building">
+                            <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=600&q=80"
+                                alt="Muscle Building">
                         </div>
                         <div class="program-content">
                             <span class="program-tag">Hypertrophy</span>
@@ -2420,7 +2595,8 @@
                     </div>
                     <div class="program-card animate-on-scroll animate-up">
                         <div class="program-img">
-                            <img src="https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?w=600&q=80" alt="HIIT">
+                            <img src="https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?w=600&q=80"
+                                alt="HIIT">
                         </div>
                         <div class="program-content">
                             <span class="program-tag">Cardio</span>
@@ -2430,7 +2606,8 @@
                     </div>
                     <div class="program-card animate-on-scroll animate-up">
                         <div class="program-img">
-                            <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=600&q=80" alt="CrossFit">
+                            <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=600&q=80"
+                                alt="CrossFit">
                         </div>
                         <div class="program-content">
                             <span class="program-tag">Functional</span>
@@ -2450,7 +2627,8 @@
                     </div>
                     <div class="program-card animate-on-scroll animate-up">
                         <div class="program-img">
-                            <img src="https://images.unsplash.com/photo-1524594152303-9fd13543fe6e?w=600&q=80" alt="Zumba">
+                            <img src="https://images.unsplash.com/photo-1524594152303-9fd13543fe6e?w=600&q=80"
+                                alt="Zumba">
                         </div>
                         <div class="program-content">
                             <span class="program-tag">Dance</span>
@@ -2460,7 +2638,8 @@
                     </div>
                     <div class="program-card animate-on-scroll animate-up">
                         <div class="program-img">
-                            <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=600&q=80" alt="Personal Training">
+                            <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=600&q=80"
+                                alt="Personal Training">
                         </div>
                         <div class="program-content">
                             <span class="program-tag">1-on-1</span>
@@ -2482,7 +2661,8 @@
                 <div class="team-grid">
                     <div class="team-card animate-on-scroll animate-up">
                         <div class="team-img">
-                            <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=400&q=80" alt="Trainer">
+                            <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=400&q=80"
+                                alt="Trainer">
                             <div class="team-social">
                                 <a href="#"><i class="fab fa-instagram"></i></a>
                                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -2492,12 +2672,14 @@
                         <div class="team-info">
                             <h3>Marcus Johnson</h3>
                             <span>Head Strength Coach</span>
-                            <p style="font-size: 13px; color: var(--gray-light); margin-top: 8px;">NASM-CPT, NSCA-CSCS, 15 years experience</p>
+                            <p style="font-size: 13px; color: var(--gray-light); margin-top: 8px;">NASM-CPT, NSCA-CSCS,
+                                15 years experience</p>
                         </div>
                     </div>
                     <div class="team-card animate-on-scroll animate-up">
                         <div class="team-img">
-                            <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=400&q=80" alt="Trainer">
+                            <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=400&q=80"
+                                alt="Trainer">
                             <div class="team-social">
                                 <a href="#"><i class="fab fa-instagram"></i></a>
                                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -2507,12 +2689,14 @@
                         <div class="team-info">
                             <h3>Emma Rodriguez</h3>
                             <span>Yoga and Pilates Instructor</span>
-                            <p style="font-size: 13px; color: var(--gray-light); margin-top: 8px;">RYT-500, Pilates Mat Certified, 10 years experience</p>
+                            <p style="font-size: 13px; color: var(--gray-light); margin-top: 8px;">RYT-500, Pilates Mat
+                                Certified, 10 years experience</p>
                         </div>
                     </div>
                     <div class="team-card animate-on-scroll animate-up">
                         <div class="team-img">
-                            <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=400&q=80" alt="Trainer">
+                            <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=400&q=80"
+                                alt="Trainer">
                             <div class="team-social">
                                 <a href="#"><i class="fab fa-instagram"></i></a>
                                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -2522,12 +2706,14 @@
                         <div class="team-info">
                             <h3>Alex Thompson</h3>
                             <span>HIIT and CrossFit Specialist</span>
-                            <p style="font-size: 13px; color: var(--gray-light); margin-top: 8px;">CrossFit L3, ACE-CPT, 8 years experience</p>
+                            <p style="font-size: 13px; color: var(--gray-light); margin-top: 8px;">CrossFit L3, ACE-CPT,
+                                8 years experience</p>
                         </div>
                     </div>
                     <div class="team-card animate-on-scroll animate-up">
                         <div class="team-img">
-                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80" alt="Trainer">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80"
+                                alt="Trainer">
                             <div class="team-social">
                                 <a href="#"><i class="fab fa-instagram"></i></a>
                                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -2537,7 +2723,8 @@
                         <div class="team-info">
                             <h3>Lisa Park</h3>
                             <span>Nutrition and Wellness Coach</span>
-                            <p style="font-size: 13px; color: var(--gray-light); margin-top: 8px;">MS Nutrition, ISSA-SNS, 12 years experience</p>
+                            <p style="font-size: 13px; color: var(--gray-light); margin-top: 8px;">MS Nutrition,
+                                ISSA-SNS, 12 years experience</p>
                         </div>
                     </div>
                 </div>
@@ -2548,7 +2735,8 @@
             <div class="container">
                 <div class="cta-content animate-on-scroll animate-up">
                     <h2 class="cta-title">Start Your Transformation</h2>
-                    <p class="cta-desc">Get a personalized program designed specifically for your goals and fitness level.</p>
+                    <p class="cta-desc">Get a personalized program designed specifically for your goals and fitness
+                        level.</p>
                     <a href="javascript:void(0)" class="btn-primary" onclick="showPage('contact', event)">
                         <i class="fas fa-user-plus"></i> Get Personal Training
                     </a>
@@ -2560,7 +2748,9 @@
     <!-- GALLERY PAGE -->
     <div id="gallery" class="page-section">
         <section class="hero" style="height: 60vh;">
-            <div class="hero-bg" style="background: linear-gradient(135deg, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.7) 100%), url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1920&q=80') center/cover;"></div>
+            <div class="hero-bg"
+                style="background: linear-gradient(135deg, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.7) 100%), url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1920&q=80') center/cover;">
+            </div>
             <div class="hero-content" style="padding-top: 80px;">
                 <p class="hero-subtitle">Gallery</p>
                 <h1 class="hero-title" style="font-size: 56px;">Our <span>Gallery</span></h1>
@@ -2576,23 +2766,28 @@
                 </div>
                 <div class="gallery-grid">
                     <div class="gallery-item animate-on-scroll animate-scale" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80" alt="Gym Interior">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80"
+                            alt="Gym Interior">
                         <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
                     </div>
                     <div class="gallery-item animate-on-scroll animate-scale" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&q=80" alt="Weight Room">
+                        <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&q=80"
+                            alt="Weight Room">
                         <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
                     </div>
                     <div class="gallery-item animate-on-scroll animate-scale" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=800&q=80" alt="Pool Area">
+                        <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=800&q=80"
+                            alt="Pool Area">
                         <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
                     </div>
                     <div class="gallery-item animate-on-scroll animate-scale" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80" alt="Training Session">
+                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80"
+                            alt="Training Session">
                         <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
                     </div>
                     <div class="gallery-item animate-on-scroll animate-scale" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=800&q=80" alt="Yoga Class">
+                        <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=800&q=80"
+                            alt="Yoga Class">
                         <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
                     </div>
                     <!-- <div class="gallery-item animate-on-scroll animate-scale" onclick="openLightbox(this)">
@@ -2600,11 +2795,13 @@
                         <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
                     </div> -->
                     <div class="gallery-item animate-on-scroll animate-scale" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80" alt="CrossFit Zone">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80"
+                            alt="CrossFit Zone">
                         <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
                     </div>
                     <div class="gallery-item animate-on-scroll animate-scale" onclick="openLightbox(this)">
-                        <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=800&q=80" alt="Personal Training">
+                        <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=800&q=80"
+                            alt="Personal Training">
                         <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
                     </div>
                 </div>
@@ -2622,15 +2819,18 @@
                     <div class="story-card animate-on-scroll animate-up">
                         <div class="story-before-after">
                             <div class="before">
-                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Before">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80"
+                                    alt="Before">
                             </div>
                             <div class="after">
-                                <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=400&q=80" alt="After">
+                                <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=400&q=80"
+                                    alt="After">
                             </div>
                         </div>
                         <div class="story-content">
                             <h3>James Transformation</h3>
-                            <p>James lost 45 lbs and gained significant muscle mass through our strength and nutrition program.</p>
+                            <p>James lost 45 lbs and gained significant muscle mass through our strength and nutrition
+                                program.</p>
                             <div class="story-stats">
                                 <div class="story-stat">
                                     <div class="story-stat-value">-45</div>
@@ -2646,15 +2846,18 @@
                     <div class="story-card animate-on-scroll animate-up">
                         <div class="story-before-after">
                             <div class="before">
-                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80" alt="Before">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80"
+                                    alt="Before">
                             </div>
                             <div class="after">
-                                <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=400&q=80" alt="After">
+                                <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=400&q=80"
+                                    alt="After">
                             </div>
                         </div>
                         <div class="story-content">
                             <h3>Sarah's Journey</h3>
-                            <p>Sarah went from beginner to competitor, completing her first marathon after 8 months of training.</p>
+                            <p>Sarah went from beginner to competitor, completing her first marathon after 8 months of
+                                training.</p>
                             <div class="story-stats">
                                 <div class="story-stat">
                                     <div class="story-stat-value">+15</div>
@@ -2670,15 +2873,18 @@
                     <div class="story-card animate-on-scroll animate-up">
                         <div class="story-before-after">
                             <div class="before">
-                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80" alt="Before">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80"
+                                    alt="Before">
                             </div>
                             <div class="after">
-                                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80" alt="After">
+                                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80"
+                                    alt="After">
                             </div>
                         </div>
                         <div class="story-content">
                             <h3>David's Comeback</h3>
-                            <p>After a sports injury, David rebuilt his strength and surpassed his previous fitness levels.</p>
+                            <p>After a sports injury, David rebuilt his strength and surpassed his previous fitness
+                                levels.</p>
                             <div class="story-stats">
                                 <div class="story-stat">
                                     <div class="story-stat-value">100%</div>
@@ -2699,7 +2905,9 @@
     <!-- CONTACT PAGE -->
     <div id="contact" class="page-section">
         <section class="hero" style="height: 60vh;">
-            <div class="hero-bg" style="background: linear-gradient(135deg, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.7) 100%), url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1920&q=80') center/cover;"></div>
+            <div class="hero-bg"
+                style="background: linear-gradient(135deg, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.7) 100%), url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1920&q=80') center/cover;">
+            </div>
             <div class="hero-content" style="padding-top: 80px;">
                 <p class="hero-subtitle">Get In Touch</p>
                 <h1 class="hero-title" style="font-size: 56px;">Contact <span>Us</span></h1>
@@ -2733,12 +2941,15 @@
                             </div>
                         </div>
                         <div class="map-container">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.1234567890123!2d77.0314659!3d28.6101395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d05c6e14ef013%3A0x8deda25cdadb1275!2sFitlean%20Fitness!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.1234567890123!2d77.0314659!3d28.6101395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d05c6e14ef013%3A0x8deda25cdadb1275!2sFitlean%20Fitness!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+                                allowfullscreen="" loading="lazy"></iframe>
                         </div>
                     </div>
                     <div class="animate-on-scroll animate-right">
                         <div class="contact-form">
-                            <h3 style="font-size: 28px; font-weight: 800; margin-bottom: 30px;">Send us a <span style="color: var(--electric-blue);">Message</span></h3>
+                            <h3 style="font-size: 28px; font-weight: 800; margin-bottom: 30px;">Send us a <span
+                                    style="color: var(--electric-blue);">Message</span></h3>
                             <div class="form-row">
                                 <div class="form-group">
                                     <label>First Name</label>
@@ -2771,11 +2982,13 @@
                                 <label>Message</label>
                                 <textarea id="waMessage" placeholder="How can we help you?"></textarea>
                             </div>
-                            <button class="btn-primary" style="width: 100%; justify-content: center;" onclick="sendWhatsAppMessage()">
+                            <button class="btn-primary" style="width: 100%; justify-content: center;"
+                                onclick="sendWhatsAppMessage()">
                                 <i class="fab fa-whatsapp"></i> Send via WhatsApp
                             </button>
                             <p style="text-align: center; margin-top: 15px; font-size: 13px; color: var(--gray-light);">
-                                <i class="fas fa-lock" style="margin-right: 5px;"></i> Your message will be sent directly to our WhatsApp
+                                <i class="fas fa-lock" style="margin-right: 5px;"></i> Your message will be sent
+                                directly to our WhatsApp
                             </p>
                         </div>
                     </div>
@@ -2797,7 +3010,9 @@
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                            <p>We are open 24/7 for members with keycard access. Staffed hours are Monday through Friday from 5:00 AM to 11:00 PM, and Saturday through Sunday from 6:00 AM to 10:00 PM. Holiday hours may vary.</p>
+                            <p>We are open 24/7 for members with keycard access. Staffed hours are Monday through Friday
+                                from 5:00 AM to 11:00 PM, and Saturday through Sunday from 6:00 AM to 10:00 PM. Holiday
+                                hours may vary.</p>
                         </div>
                     </div>
                     <div class="faq-item">
@@ -2806,7 +3021,9 @@
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                            <p>Yes! We offer a complimentary 7-day trial that includes full access to all gym facilities, group classes, and one personal training session. No credit card required to start your trial.</p>
+                            <p>Yes! We offer a complimentary 7-day trial that includes full access to all gym
+                                facilities, group classes, and one personal training session. No credit card required to
+                                start your trial.</p>
                         </div>
                     </div>
                     <div class="faq-item">
@@ -2815,7 +3032,9 @@
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                            <p>Absolutely. Members can freeze their membership for up to 3 months per year for medical reasons, travel, or personal circumstances. A small administrative fee may apply depending on your membership plan.</p>
+                            <p>Absolutely. Members can freeze their membership for up to 3 months per year for medical
+                                reasons, travel, or personal circumstances. A small administrative fee may apply
+                                depending on your membership plan.</p>
                         </div>
                     </div>
                     <div class="faq-item">
@@ -2824,7 +3043,9 @@
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                            <p>Monthly memberships can be cancelled with 30 days notice. Annual memberships can be cancelled with 60 days notice. We also offer a 30-day money-back guarantee for new members who are not satisfied.</p>
+                            <p>Monthly memberships can be cancelled with 30 days notice. Annual memberships can be
+                                cancelled with 60 days notice. We also offer a 30-day money-back guarantee for new
+                                members who are not satisfied.</p>
                         </div>
                     </div>
                     <div class="faq-item">
@@ -2833,7 +3054,9 @@
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                            <p>Yes, we have premium locker rooms with secure digital lockers, spacious showers with premium toiletries, saunas, and steam rooms. Towel service is included with all membership plans.</p>
+                            <p>Yes, we have premium locker rooms with secure digital lockers, spacious showers with
+                                premium toiletries, saunas, and steam rooms. Towel service is included with all
+                                membership plans.</p>
                         </div>
                     </div>
                     <div class="faq-item">
@@ -2842,7 +3065,9 @@
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                            <p>Personal training sessions are included based on your membership tier. Monthly members get 2 sessions per month, while Annual members receive 4 sessions per month. Additional sessions can be purchased at member rates.</p>
+                            <p>Personal training sessions are included based on your membership tier. Monthly members
+                                get 2 sessions per month, while Annual members receive 4 sessions per month. Additional
+                                sessions can be purchased at member rates.</p>
                         </div>
                     </div>
                 </div>
@@ -2854,7 +3079,8 @@
                 <div class="cta-content animate-on-scroll animate-up">
                     <h2 class="cta-title">Ready to Transform?</h2>
                     <p class="cta-desc">Book your free trial today and experience the PowerHouse difference.</p>
-                    <a href="#" class="btn-primary" onclick="alert('Free trial booking form would open here. Contact us directly!')">
+                    <a href="#" class="btn-primary"
+                        onclick="alert('Free trial booking form would open here. Contact us directly!')">
                         <i class="fas fa-calendar-check"></i> Book Free Trial
                     </a>
                 </div>
@@ -2874,7 +3100,8 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <h3>Power<span>House</span> Fitness</h3>
-                    <p>Transforming lives through fitness since 2012. Join our community of champions and start your journey to a stronger, healthier you.</p>
+                    <p>Transforming lives through fitness since 2012. Join our community of champions and start your
+                        journey to a stronger, healthier you.</p>
                     <div class="footer-social">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -2886,30 +3113,43 @@
                 <div class="footer-column">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="javascript:void(0)" onclick="showPage('home', event)"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="javascript:void(0)" onclick="showPage('about', event)"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                        <li><a href="javascript:void(0)" onclick="showPage('membership', event)"><i class="fas fa-chevron-right"></i> Membership</a></li>
-                        <li><a href="javascript:void(0)" onclick="showPage('programs', event)"><i class="fas fa-chevron-right"></i> Programs</a></li>
-                        <li><a href="javascript:void(0)" onclick="showPage('gallery', event)"><i class="fas fa-chevron-right"></i> Gallery</a></li>
-                        <li><a href="javascript:void(0)" onclick="showPage('contact', event)"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('home', event)"><i
+                                    class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('about', event)"><i
+                                    class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('membership', event)"><i
+                                    class="fas fa-chevron-right"></i> Membership</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('programs', event)"><i
+                                    class="fas fa-chevron-right"></i> Programs</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('gallery', event)"><i
+                                    class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('contact', event)"><i
+                                    class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Programs</h4>
                     <ul>
-                        <li><a href="javascript:void(0)" onclick="showPage('programs', event)"><i class="fas fa-chevron-right"></i> Strength Training</a></li>
-                        <li><a href="javascript:void(0)" onclick="showPage('programs', event)"><i class="fas fa-chevron-right"></i> Fat Loss</a></li>
-                        <li><a href="javascript:void(0)" onclick="showPage('programs', event)"><i class="fas fa-chevron-right"></i> Muscle Building</a></li>
-                        <li><a href="javascript:void(0)" onclick="showPage('programs', event)"><i class="fas fa-chevron-right"></i> HIIT</a></li>
-                        <li><a href="javascript:void(0)" onclick="showPage('programs', event)"><i class="fas fa-chevron-right"></i> Yoga</a></li>
-                        <li><a href="javascript:void(0)" onclick="showPage('programs', event)"><i class="fas fa-chevron-right"></i> CrossFit</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('programs', event)"><i
+                                    class="fas fa-chevron-right"></i> Strength Training</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('programs', event)"><i
+                                    class="fas fa-chevron-right"></i> Fat Loss</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('programs', event)"><i
+                                    class="fas fa-chevron-right"></i> Muscle Building</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('programs', event)"><i
+                                    class="fas fa-chevron-right"></i> HIIT</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('programs', event)"><i
+                                    class="fas fa-chevron-right"></i> Yoga</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('programs', event)"><i
+                                    class="fas fa-chevron-right"></i> CrossFit</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Newsletter</h4>
                     <div class="footer-newsletter">
                         <p>Subscribe for fitness tips, exclusive offers, and updates.</p>
-                        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+                        <form class="newsletter-form"
+                            onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
                             <input type="email" placeholder="Your email" required>
                             <button type="submit"><i class="fas fa-arrow-right"></i></button>
                         </form>
@@ -3140,4 +3380,5 @@
         });
     </script>
 </body>
+
 </html>
