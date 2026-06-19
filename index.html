@@ -199,7 +199,7 @@
             box-shadow: 0 0 30px rgba(0, 191, 255, 0.4);
         }
 
-        .hamburger {
+               .hamburger {
             display: none;
             flex-direction: column;
             gap: 5px;
@@ -210,7 +210,7 @@
         .hamburger span {
             width: 30px;
             height: 3px;
-             background: var(--white);
+            background: var(--white);
             transition: all 0.3s ease;
             border-radius: 2px;
         }
@@ -218,21 +218,19 @@
         .hamburger.active span:nth-child(1) {
             transform: rotate(45deg) translate(5px, 5px);
         }
+
         .hamburger.active span:nth-child(2) {
-            opacity: 1;
+            opacity: 0;
         }
+
         .hamburger.active span:nth-child(3) {
             transform: rotate(-45deg) translate(5px, -5px);
         }
 
-        .hamburger span {
-            background: var(--white);
-        }
-
         .dark-mode .hamburger span {
-             background: var(--white);
+            background: #000000;
         }
-
+        
         .hero {
             height: 100vh;
             position: relative;
