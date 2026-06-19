@@ -1,0 +1,3137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerHouse Fitness | Transform Your Body. Elevate Your Life.</title>
+    <meta name="description" content="Premium gym and fitness center offering world-class training, equipment, and programs.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --matte-black: #0A0A0A;
+            --electric-blue: #00BFFF;
+            --neon-cyan: #00F5FF;
+            --white: #FFFFFF;
+            --gray-dark: #1A1A1A;
+            --gray-mid: #2A2A2A;
+            --gray-light: #888888;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--matte-black);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--matte-black);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--electric-blue);
+            border-radius: 4px;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-60px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(60px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(0, 191, 255, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(0, 191, 255, 0.6); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+        }
+        .animate-up { transform: translateY(40px); }
+        .animate-up.visible { transform: translateY(0); }
+        .animate-left { transform: translateX(-40px); }
+        .animate-left.visible { transform: translateX(0); }
+        .animate-right { transform: translateX(40px); }
+        .animate-right.visible { transform: translateX(0); }
+        .animate-scale { transform: scale(0.9); }
+        .animate-scale.visible { transform: scale(1); }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: all 0.4s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 12px 0;
+            box-shadow: 0 4px 30px rgba(0, 191, 255, 0.1);
+        }
+
+        .navbar .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--electric-blue);
+        }
+
+        .logo i {
+            color: var(--neon-cyan);
+            font-size: 32px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--electric-blue);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--electric-blue);
+        }
+
+        .btn-nav {
+            background: var(--electric-blue);
+            color: var(--matte-black);
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid var(--electric-blue);
+        }
+
+        .btn-nav:hover {
+            background: transparent;
+            color: var(--electric-blue);
+            box-shadow: 0 0 30px rgba(0, 191, 255, 0.4);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 30px;
+            height: 3px;
+            background: var(--white);
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10,10,10,0.8) 0%, rgba(10,10,10,0.6) 50%, rgba(0,191,255,0.1) 100%),
+                        url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=80') center/cover;
+            z-index: -1;
+        }
+
+        .hero-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--electric-blue);
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            padding: 0 30px;
+            z-index: 1;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--neon-cyan);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease forwards;
+            opacity: 0;
+        }
+
+        .hero-title {
+            font-size: 72px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            animation: fadeInUp 1s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero-title span {
+            background: linear-gradient(135deg, var(--electric-blue), var(--neon-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-desc {
+            font-size: 20px;
+            color: var(--gray-light);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease 0.4s forwards;
+            opacity: 0;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            animation: fadeInUp 1s ease 0.6s forwards;
+            opacity: 0;
+        }
+
+        .btn-primary {
+            background: var(--electric-blue);
+            color: var(--matte-black);
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid var(--electric-blue);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--electric-blue);
+            box-shadow: 0 0 40px rgba(0, 191, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--neon-cyan);
+            color: var(--neon-cyan);
+            box-shadow: 0 0 30px rgba(0, 245, 255, 0.2);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: float 2s ease-in-out infinite;
+        }
+
+        .scroll-indicator i {
+            font-size: 30px;
+            color: var(--electric-blue);
+        }
+
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-tag {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--electric-blue);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .section-title span {
+            color: var(--electric-blue);
+        }
+
+        .section-desc {
+            font-size: 18px;
+            color: var(--gray-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .counters-section {
+            background: var(--gray-dark);
+            padding: 60px 0;
+        }
+
+        .counters-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .counter-card {
+            text-align: center;
+            padding: 30px;
+            background: rgba(0, 191, 255, 0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(0, 191, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .counter-card:hover {
+            border-color: var(--electric-blue);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0, 191, 255, 0.1);
+        }
+
+        .counter-icon {
+            font-size: 40px;
+            color: var(--electric-blue);
+            margin-bottom: 15px;
+        }
+
+        .counter-number {
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 5px;
+        }
+
+        .counter-label {
+            font-size: 16px;
+            color: var(--gray-light);
+        }
+
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .facility-card {
+            background: var(--gray-dark);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .facility-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--electric-blue);
+            box-shadow: 0 20px 60px rgba(0, 191, 255, 0.15);
+        }
+
+        .facility-img {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .facility-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .facility-card:hover .facility-img img {
+            transform: scale(1.1);
+        }
+
+        .facility-content {
+            padding: 30px;
+        }
+
+        .facility-content h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .facility-content p {
+            color: var(--gray-light);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .facility-content i {
+            font-size: 30px;
+            color: var(--electric-blue);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .membership-highlights {
+            background: linear-gradient(135deg, var(--gray-dark) 0%, var(--matte-black) 100%);
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .highlight-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(0, 191, 255, 0.15);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--electric-blue), var(--neon-cyan));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .highlight-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .highlight-card:hover {
+            background: rgba(0, 191, 255, 0.05);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0, 191, 255, 0.1);
+        }
+
+        .highlight-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(0, 191, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
+            color: var(--electric-blue);
+            transition: all 0.3s ease;
+        }
+
+        .highlight-card:hover .highlight-icon {
+            background: var(--electric-blue);
+            color: var(--matte-black);
+            transform: rotate(360deg);
+        }
+
+        .highlight-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .highlight-card p {
+            font-size: 15px;
+            color: var(--gray-light);
+            line-height: 1.6;
+        }
+
+        .testimonials-section {
+            background: var(--matte-black);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--gray-dark);
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.4s ease;
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--electric-blue);
+            transform: translateY(-5px);
+        }
+
+        .testimonial-quote {
+            font-size: 60px;
+            color: var(--electric-blue);
+            opacity: 0.3;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-text {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--gray-light);
+            margin-bottom: 25px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--electric-blue);
+        }
+
+        .testimonial-author-info h4 {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .testimonial-author-info span {
+            font-size: 14px;
+            color: var(--electric-blue);
+        }
+
+        .stars {
+            color: #FFD700;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, rgba(0,191,255,0.1) 0%, rgba(0,245,255,0.05) 100%);
+            text-align: center;
+            padding: 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0,191,255,0.05) 0%, transparent 70%);
+            animation: shimmer 8s linear infinite;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-title {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .cta-desc {
+            font-size: 20px;
+            color: var(--gray-light);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .about-section {
+            background: var(--matte-black);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-images {
+            position: relative;
+        }
+
+        .about-img-main {
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        }
+
+        .about-img-main img {
+            width: 100%;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .about-img-main:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-img-secondary {
+            position: absolute;
+            bottom: -40px;
+            right: -40px;
+            width: 60%;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 5px solid var(--matte-black);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        }
+
+        .about-img-secondary img {
+            width: 100%;
+            display: block;
+        }
+
+        .about-content h2 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .about-content h2 span {
+            color: var(--electric-blue);
+        }
+
+        .about-content p {
+            font-size: 16px;
+            color: var(--gray-light);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .about-feature i {
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 191, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--electric-blue);
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .about-feature span {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .mission-vision-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .mission-card, .vision-card {
+            background: var(--gray-dark);
+            border-radius: 20px;
+            padding: 50px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.4s ease;
+        }
+
+        .mission-card:hover, .vision-card:hover {
+            border-color: var(--electric-blue);
+            transform: translateY(-5px);
+        }
+
+        .mission-card i, .vision-card i {
+            font-size: 40px;
+            color: var(--electric-blue);
+            margin-bottom: 20px;
+        }
+
+        .mission-card h3, .vision-card h3 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .mission-card p, .vision-card p {
+            font-size: 16px;
+            color: var(--gray-light);
+            line-height: 1.8;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .team-card {
+            background: var(--gray-dark);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--electric-blue);
+            box-shadow: 0 20px 60px rgba(0, 191, 255, 0.1);
+        }
+
+        .team-img {
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .team-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .team-card:hover .team-img img {
+            transform: scale(1.1);
+        }
+
+        .team-social {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover .team-social {
+            opacity: 1;
+            bottom: 30px;
+        }
+
+        .team-social a {
+            width: 40px;
+            height: 40px;
+            background: var(--electric-blue);
+            color: var(--matte-black);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .team-social a:hover {
+            background: var(--neon-cyan);
+            transform: scale(1.1);
+        }
+
+        .team-info {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .team-info h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .team-info span {
+            font-size: 14px;
+            color: var(--electric-blue);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            cursor: pointer;
+            aspect-ratio: 1;
+        }
+
+        .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+        .gallery-item:nth-child(4) { grid-column: span 2; }
+        .gallery-item:nth-child(5) { grid-row: span 2; }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 191, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay i {
+            font-size: 40px;
+            color: var(--white);
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 40px;
+            color: var(--white);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            color: var(--electric-blue);
+            transform: rotate(90deg);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .pricing-card {
+            background: var(--gray-dark);
+            border-radius: 20px;
+            padding: 50px 30px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--electric-blue);
+        }
+
+        .pricing-card.popular {
+            border-color: var(--electric-blue);
+            background: linear-gradient(135deg, var(--gray-dark) 0%, rgba(0,191,255,0.1) 100%);
+            transform: scale(1.05);
+        }
+
+        .pricing-card.popular::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: var(--electric-blue);
+            color: var(--matte-black);
+            padding: 8px 40px;
+            font-size: 12px;
+            font-weight: 700;
+            transform: rotate(45deg);
+        }
+
+        .pricing-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .pricing-price {
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--electric-blue);
+            margin: 20px 0;
+        }
+
+        .pricing-price span {
+            font-size: 16px;
+            color: var(--gray-light);
+            font-weight: 400;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .pricing-features li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 15px;
+            color: var(--gray-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .pricing-features li i {
+            color: var(--neon-cyan);
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .program-card {
+            background: var(--gray-dark);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--electric-blue);
+            box-shadow: 0 20px 60px rgba(0, 191, 255, 0.1);
+        }
+
+        .program-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .program-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .program-card:hover .program-img img {
+            transform: scale(1.1);
+        }
+
+        .program-content {
+            padding: 30px;
+        }
+
+        .program-content h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .program-content p {
+            font-size: 14px;
+            color: var(--gray-light);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .program-tag {
+            display: inline-block;
+            background: rgba(0, 191, 255, 0.1);
+            color: var(--electric-blue);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .trainers-section {
+            background: var(--matte-black);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .contact-info-card {
+            background: var(--gray-dark);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .contact-info-card:hover {
+            border-color: var(--electric-blue);
+            transform: translateY(-5px);
+        }
+
+        .contact-info-card i {
+            font-size: 30px;
+            color: var(--electric-blue);
+            margin-bottom: 15px;
+        }
+
+        .contact-info-card h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .contact-info-card p {
+            font-size: 14px;
+            color: var(--gray-light);
+        }
+
+        .contact-form {
+            background: var(--gray-dark);
+            border-radius: 20px;
+            padding: 50px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--gray-light);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px 20px;
+            background: var(--matte-black);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            color: var(--white);
+            font-size: 15px;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--electric-blue);
+            box-shadow: 0 0 20px rgba(0, 191, 255, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .map-container {
+            border-radius: 20px;
+            overflow: hidden;
+            height: 100%;
+            min-height: 400px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: grayscale(1) invert(1) contrast(0.8);
+        }
+
+        .faq-section {
+            background: var(--matte-black);
+        }
+
+        .faq-item {
+            background: var(--gray-dark);
+            border-radius: 15px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(0, 191, 255, 0.05);
+        }
+
+        .faq-question h3 {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .faq-question i {
+            font-size: 20px;
+            color: var(--electric-blue);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+
+        .faq-answer p {
+            padding: 0 30px 25px;
+            font-size: 15px;
+            color: var(--gray-light);
+            line-height: 1.8;
+        }
+
+        .bmi-section {
+            background: linear-gradient(135deg, var(--gray-dark) 0%, var(--matte-black) 100%);
+        }
+
+        .bmi-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--gray-dark);
+            border-radius: 20px;
+            padding: 50px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .bmi-result {
+            margin-top: 30px;
+            padding: 30px;
+            background: var(--matte-black);
+            border-radius: 15px;
+            text-align: center;
+            display: none;
+        }
+
+        .bmi-result.active {
+            display: block;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        .bmi-value {
+            font-size: 56px;
+            font-weight: 900;
+            color: var(--electric-blue);
+        }
+
+        .bmi-status {
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .story-card {
+            background: var(--gray-dark);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.4s ease;
+        }
+
+        .story-card:hover {
+            border-color: var(--electric-blue);
+            transform: translateY(-5px);
+        }
+
+        .story-before-after {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: 250px;
+            position: relative;
+        }
+
+        .story-before-after img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .story-before-after .before {
+            position: relative;
+        }
+
+        .story-before-after .before::after {
+            content: 'Before';
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.7);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .story-before-after .after {
+            position: relative;
+        }
+
+        .story-before-after .after::after {
+            content: 'After';
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: var(--electric-blue);
+            color: var(--matte-black);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .story-content {
+            padding: 30px;
+        }
+
+        .story-content h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .story-content p {
+            font-size: 14px;
+            color: var(--gray-light);
+            line-height: 1.6;
+        }
+
+        .story-stats {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .story-stat {
+            text-align: center;
+        }
+
+        .story-stat-value {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--electric-blue);
+        }
+
+        .story-stat-label {
+            font-size: 12px;
+            color: var(--gray-light);
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .tip-card {
+            background: var(--gray-dark);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.4s ease;
+        }
+
+        .tip-card:hover {
+            border-color: var(--electric-blue);
+            transform: translateY(-5px);
+        }
+
+        .tip-number {
+            font-size: 48px;
+            font-weight: 900;
+            color: rgba(0, 191, 255, 0.1);
+            line-height: 1;
+            margin-bottom: 15px;
+        }
+
+        .tip-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .tip-card p {
+            font-size: 15px;
+            color: var(--gray-light);
+            line-height: 1.7;
+        }
+
+        .footer {
+            background: var(--gray-dark);
+            padding: 80px 0 30px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand h3 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .footer-brand h3 span {
+            color: var(--electric-blue);
+        }
+
+        .footer-brand p {
+            font-size: 15px;
+            color: var(--gray-light);
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-social a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-social a:hover {
+            background: var(--electric-blue);
+            color: var(--matte-black);
+            border-color: var(--electric-blue);
+            transform: translateY(-3px);
+        }
+
+        .footer-column h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: var(--white);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul li a {
+            color: var(--gray-light);
+            text-decoration: none;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--electric-blue);
+            padding-left: 5px;
+        }
+
+        .footer-column ul li a i {
+            font-size: 12px;
+        }
+
+        .footer-newsletter {
+            margin-top: 20px;
+        }
+
+        .footer-newsletter p {
+            font-size: 14px;
+            color: var(--gray-light);
+            margin-bottom: 15px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 20px;
+            background: var(--matte-black);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 50px;
+            color: var(--white);
+            font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: var(--electric-blue);
+        }
+
+        .newsletter-form button {
+            padding: 12px 25px;
+            background: var(--electric-blue);
+            color: var(--matte-black);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background: var(--neon-cyan);
+            transform: scale(1.05);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            font-size: 14px;
+            color: var(--gray-light);
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .footer-bottom-links a {
+            color: var(--gray-light);
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--electric-blue);
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 30px;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+            z-index: 999;
+            transition: all 0.3s ease;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
+        }
+
+        @media (max-width: 1200px) {
+            .facilities-grid,
+            .highlights-grid,
+            .pricing-grid,
+            .programs-grid,
+            .team-grid,
+            .gallery-grid,
+            .testimonials-grid,
+            .stories-grid,
+            .tips-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .counters-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 350px;
+                height: 100vh;
+                background: var(--gray-dark);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+                transition: right 0.4s ease;
+                z-index: 1000;
+                padding: 80px 40px;
+            }
+            .nav-links.active {
+                right: 0;
+            }
+            .nav-links a {
+                font-size: 18px;
+            }
+            .hero-title {
+                font-size: 40px;
+            }
+            .hero-buttons {
+                flex-direction: column;
+            }
+            .section-title {
+                font-size: 32px;
+            }
+            .about-grid,
+            .contact-grid,
+            .mission-vision-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .about-features,
+            .contact-info-grid,
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .facilities-grid,
+            .highlights-grid,
+            .pricing-grid,
+            .programs-grid,
+            .team-grid,
+            .gallery-grid,
+            .testimonials-grid,
+            .stories-grid,
+            .tips-grid,
+            .counters-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .pricing-card.popular {
+                transform: scale(1);
+            }
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            .gallery-item:nth-child(1),
+            .gallery-item:nth-child(4),
+            .gallery-item:nth-child(5) {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+        }
+
+        .page-section {
+            display: none;
+        }
+        .page-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .glow-text {
+            text-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+        }
+
+        .glow-box {
+            box-shadow: 0 0 30px rgba(0, 191, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="javascript:void(0)" class="logo" onclick="showPage('home', event)">
+                <i class="fas fa-dumbbell"></i>
+                Power<span>House</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="javascript:void(0)" class="active" onclick="showPage('home', event)">Home</a>
+                <a href="javascript:void(0)" onclick="showPage('about', event)">About</a>
+                <a href="javascript:void(0)" onclick="showPage('membership', event)">Membership</a>
+                <a href="javascript:void(0)" onclick="showPage('programs', event)">Programs</a>
+                <a href="javascript:void(0)" onclick="showPage('gallery', event)">Gallery</a>
+                <a href="javascript:void(0)" onclick="showPage('contact', event)">Contact</a>
+                <a href="javascript:void(0)" class="btn-nav" onclick="showPage('membership', event)">Join Now</a>
+            </div>
+            <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <div id="home" class="page-section active">
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-particles" id="particles"></div>
+            <div class="hero-content">
+                <p class="hero-subtitle">Welcome to PowerHouse Fitness</p>
+                <h1 class="hero-title">Transform Your Body.<br><span>Elevate Your Life.</span></h1>
+                <p class="hero-desc">Experience world-class training, state-of-the-art equipment, and a community that pushes you to be your best.</p>
+                <div class="hero-buttons">
+                    <a href="javascript:void(0)" class="btn-primary" onclick="showPage('membership', event)">
+                        <i class="fas fa-arrow-right"></i> Join Now
+                    </a>
+                    <a href="javascript:void(0)" class="btn-secondary" onclick="showPage('contact', event)">
+                        <i class="fas fa-calendar"></i> Free Trial
+                    </a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <section class="counters-section">
+            <div class="container">
+                <div class="counters-grid">
+                    <div class="counter-card animate-on-scroll animate-up">
+                        <div class="counter-icon"><i class="fas fa-users"></i></div>
+                        <div class="counter-number" data-target="5000">0</div>
+                        <div class="counter-label">Active Members</div>
+                    </div>
+                    <div class="counter-card animate-on-scroll animate-up">
+                        <div class="counter-icon"><i class="fas fa-trophy"></i></div>
+                        <div class="counter-number" data-target="150">0</div>
+                        <div class="counter-label">Expert Trainers</div>
+                    </div>
+                    <div class="counter-card animate-on-scroll animate-up">
+                        <div class="counter-icon"><i class="fas fa-dumbbell"></i></div>
+                        <div class="counter-number" data-target="200">0</div>
+                        <div class="counter-label">Equipment Pieces</div>
+                    </div>
+                    <div class="counter-card animate-on-scroll animate-up">
+                        <div class="counter-icon"><i class="fas fa-star"></i></div>
+                        <div class="counter-number" data-target="12">0</div>
+                        <div class="counter-label">Years Experience</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="facilities-section">
+            <div class="container">
+                <div class="section-header animate-on-scroll animate-up">
+                    <p class="section-tag">World-Class Facilities</p>
+                    <h2 class="section-title">Premium <span>Amenities</span></h2>
+                    <p class="section-desc">Everything you need for the ultimate fitness experience</p>
+                </div>
+                <div class="facilities-grid">
+                    <div class="facility-card animate-on-scroll animate-up">
+                        <div class="facility-img">
+                            <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=80" alt="Strength Zone">
+                        </div>
+                        <div class="facility-content">
+                            <i class="fas fa-dumbbell"></i>
+                            <h3>Strength Zone</h3>
+                            <p>Over 100 pieces of premium strength equipment including free weights, machines, and functional training areas.</p>
+                        </div>
+                    </div>
+                    <div class="facility-card animate-on-scroll animate-up">
+                        <div class="facility-img">
+                            <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=600&q=80" alt="Cardio Theater">
+                        </div>
+                        <div class="facility-content">
+                            <i class="fas fa-heartbeat"></i>
+                            <h3>Cardio Theater</h3>
+                            <p>State-of-the-art cardio machines with personal entertainment screens and immersive workout experiences.</p>
+                        </div>
+                    </div>
+                    <div class="facility-card animate-on-scroll animate-up">
+                        <div class="facility-img">
+                            <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=600&q=80" alt="Yoga Studio">
+                        </div>
+                        <div class="facility-content">
+                            <i class="fas fa-spa"></i>
+                            <h3>Yoga and Pilates Studio</h3>
+                            <p>Dedicated studio with premium flooring, ambient lighting, and all necessary props for mind-body wellness.</p>
+                        </div>
+                    </div>
+                    <div class="facility-card animate-on-scroll animate-up">
+                        <div class="facility-img">
+                            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&q=80" alt="HIIT Zone">
+                        </div>
+                        <div class="facility-content">
+                            <i class="fas fa-fire"></i>
+                            <h3>HIIT and CrossFit Zone</h3>
+                            <p>Specialized area for high-intensity training with battle ropes, kettlebells, plyo boxes, and more.</p>
+                        </div>
+                    </div>
+                    <div class="facility-card animate-on-scroll animate-up">
+                        <div class="facility-img">
+                            <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=600&q=80" alt="Swimming Pool">
+                        </div>
+                        <div class="facility-content">
+                            <i class="fas fa-swimming-pool"></i>
+                            <h3>Swimming Pool</h3>
+                            <p>Olympic-sized heated pool with dedicated lanes for swimming, aqua aerobics, and relaxation.</p>
+                        </div>
+                    </div>
+                    <div class="facility-card animate-on-scroll animate-up">
+                        <div class="facility-img">
+                            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80" alt="Recovery Zone">
+                        </div>
+                        <div class="facility-content">
+                            <i class="fas fa-bed"></i>
+                            <h3>Recovery and Spa</h3>
+                            <p>Sauna, steam room, massage therapy, and recovery tools to help your body heal and perform.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="membership-highlights">
+            <div class="container">
+                <div class="section-header animate-on-scroll animate-up">
+                    <p class="section-tag">Membership Benefits</p>
+                    <h2 class="section-title">Why Choose <span>PowerHouse</span></h2>
+                    <p class="section-desc">Premium benefits that set us apart</p>
+                </div>
+                <div class="highlights-grid">
+                    <div class="highlight-card animate-on-scroll animate-up">
+                        <div class="highlight-icon"><i class="fas fa-clock"></i></div>
+                        <h3>24/7 Access</h3>
+                        <p>Train anytime, day or night. Our facility is open 24/7 for your convenience.</p>
+                    </div>
+                    <div class="highlight-card animate-on-scroll animate-up">
+                        <div class="highlight-icon"><i class="fas fa-user-shield"></i></div>
+                        <h3>Personal Training</h3>
+                        <p>Get customized workout plans from certified personal trainers.</p>
+                    </div>
+                    <div class="highlight-card animate-on-scroll animate-up">
+                        <div class="highlight-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h3>Mobile App</h3>
+                        <p>Track workouts, book classes, and manage your membership on the go.</p>
+                    </div>
+                    <div class="highlight-card animate-on-scroll animate-up">
+                        <div class="highlight-icon"><i class="fas fa-utensils"></i></div>
+                        <h3>Nutrition Plans</h3>
+                        <p>Customized meal plans and nutrition coaching for optimal results.</p>
+                    </div>
+                    <div class="highlight-card animate-on-scroll animate-up">
+                        <div class="highlight-icon"><i class="fas fa-users"></i></div>
+                        <h3>Group Classes</h3>
+                        <p>Over 50 weekly classes including yoga, spin, HIIT, and more.</p>
+                    </div>
+                    <div class="highlight-card animate-on-scroll animate-up">
+                        <div class="highlight-icon"><i class="fas fa-parking"></i></div>
+                        <h3>Free Parking</h3>
+                        <p>Ample parking space available for all members at no extra cost.</p>
+                    </div>
+                    <div class="highlight-card animate-on-scroll animate-up">
+                        <div class="highlight-icon"><i class="fas fa-wifi"></i></div>
+                        <h3>Free WiFi</h3>
+                        <p>High-speed internet throughout the facility for your convenience.</p>
+                    </div>
+                    <div class="highlight-card animate-on-scroll animate-up">
+                        <div class="highlight-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                        <h3>Community Events</h3>
+                        <p>Regular fitness challenges, workshops, and social events.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials-section">
+            <div class="container">
+                <div class="section-header animate-on-scroll animate-up">
+                    <p class="section-tag">Testimonials</p>
+                    <h2 class="section-title">Member <span>Success Stories</span></h2>
+                    <p class="section-desc">Real results from real members</p>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card animate-on-scroll animate-up">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <div class="testimonial-quote">"</div>
+                        <p class="testimonial-text">PowerHouse completely transformed my approach to fitness. The trainers are incredibly knowledgeable and the community keeps me motivated every single day.</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Member">
+                            <div class="testimonial-author-info">
+                                <h4>James Mitchell</h4>
+                                <span>Lost 45 lbs in 6 months</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card animate-on-scroll animate-up">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <div class="testimonial-quote">"</div>
+                        <p class="testimonial-text">The facilities are world-class and the personal training program helped me achieve results I never thought possible. Best gym I have ever been to.</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Member">
+                            <div class="testimonial-author-info">
+                                <h4>Sarah Anderson</h4>
+                                <span>Gained 15 lbs muscle</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card animate-on-scroll animate-up">
+                        <div class="stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <div class="testimonial-quote">"</div>
+                        <p class="testimonial-text">From the moment I walked in, I knew this was different. The atmosphere, the equipment, the people - everything is designed for success.</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80" alt="Member">
+                            <div class="testimonial-author-info">
+                                <h4>David Chen</h4>
+                                <span>Marathon runner now</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content animate-on-scroll animate-up">
+                    <h2 class="cta-title">Ready to Start Your Journey?</h2>
+                    <p class="cta-desc">Join thousands of members who have already transformed their lives. Your first week is on us.</p>
+                    <a href="javascript:void(0)" class="btn-primary" onclick="showPage('membership', event)">
+                        <i class="fas fa-rocket"></i> Get Started Today
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <div id="about" class="page-section">
+        <section class="hero" style="height: 60vh;">
+            <div class="hero-bg" style="background: linear-gradient(135deg, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.7) 100%), url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1920&q=80') center/cover;"></div>
+            <div class="hero-content" style="padding-top: 80px;">
+                <p class="hero-subtitle">About PowerHouse</p>
+                <h1 class="hero-title" style="font-size: 56px;">Our <span>Story</span></h1>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-images animate-on-scroll animate-left">
+                        <div class="about-img-main">
+                            <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=800&q=80" alt="Gym Interior">
+                        </div>
+                        <div class="about-img-secondary">
+                            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=500&q=80" alt="Training Session">
+                        </div>
+                    </div>
+                    <div class="about-content animate-on-scroll animate-right">
+                        <p class="section-tag" style="text-align: left; margin-bottom: 15px;">Our Story</p>
+                        <h2>Building a <span>Community</span> of Champions</h2>
+                        <p>Founded in 2012, PowerHouse Fitness began with a simple mission: to create a gym that truly cares about its members. What started as a small facility with basic equipment has grown into one of the most respected fitness centers in the region.</p>
+                        <p>We believe that fitness is not just about physical strength, but about building mental resilience, fostering community, and creating lasting lifestyle changes. Our approach combines cutting-edge science with genuine human connection.</p>
+                        <div class="about-features">
+                            <div class="about-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Certified Expert Trainers</span>
+                            </div>
+                            <div class="about-feature">
+                                <i class="fas fa-check"></i>
+                                <span>State-of-the-Art Equipment</span>
+                            </div>
+                            <div class="about-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Personalized Programs</span>
+                            </div>
+                            <div class="about-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Nutrition Support</span>
+                            </div>
+                            <div class="about-feature">
+                                <i class="fas fa-check"></i>
+                                <span>24/7 Facility Access</span>
+                            </div>
+                            <div class="about-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Community Events</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mission-vision-grid">
+                    <div class="mission-card animate-on-scroll animate-left">
+                        <i class="fas fa-bullseye"></i>
+                        <h3>Our Mission</h3>
+                        <p>To empower every individual to achieve their fullest potential through world-class fitness facilities, expert guidance, and an unwavering commitment to their success. We strive to make fitness accessible, enjoyable, and transformative for people from all walks of life.</p>
+                    </div>
+                    <div class="vision-card animate-on-scroll animate-right">
+                        <i class="fas fa-eye"></i>
+                        <h3>Our Vision</h3>
+                        <p>To become the leading fitness destination that inspires a global movement toward healthier, stronger, and more confident communities. We envision a world where everyone has the tools and support to live their best life through fitness.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="counters-section">
+            <div class="container">
+                <div class="counters-grid">
+                    <div class="counter-card animate-on-scroll animate-up">
+                        <div class="counter-icon"><i class="fas fa-users"></i></div>
+                        <div class="counter-number" data-target="5000">0</div>
+                        <div class="counter-label">Active Members</div>
+                    </div>
+                    <div class="counter-card animate-on-scroll animate-up">
+                        <div class="counter-icon"><i class="fas fa-trophy"></i></div>
+                        <div class="counter-number" data-target="150">0</div>
+                        <div class="counter-label">Expert Trainers</div>
+                    </div>
+                    <div class="counter-card animate-on-scroll animate-up">
+                        <div class="counter-icon"><i class="fas fa-dumbbell"></i></div>
+                        <div class="counter-number" data-target="200">0</div>
+                        <div class="counter-label">Equipment Pieces</div>
+                    </div>
+                    <div class="counter-card animate-on-scroll animate-up">
+                        <div class="counter-icon"><i class="fas fa-star"></i></div>
+                        <div class="counter-number" data-target="12">0</div>
+                        <div class="counter-label">Years Experience</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="trainers-section">
+            <div class="container">
+                <div class="section-header animate-on-scroll animate-up">
+                    <p class="section-tag">Expert Team</p>
+                    <h2 class="section-title">Meet Our <span>Trainers</span></h2>
+                    <p class="section-desc">World-class professionals dedicated to your success</p>
+                </div>
+                <div class="team-grid">
+                    <div class="team-card animate-on-scroll animate-up">
+                        <div class="team-img">
+                            <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=400&q=80" alt="Trainer">
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Marcus Johnson</h3>
+                            <span>Head Strength Coach</span>
+                            <p style="font-size: 13px; color: var(--gray-light); margin-top: 8px;">NASM-CPT, 15 years experience</p>
+                        </div>
+                    </div>
+                    <div class="team-card animate-on-scroll animate-up">
+                        <div class="team-img">
+                            <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=400&q=80" alt="Trainer">
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Emma Rodriguez</h3>
+                            <span>Yoga and Pilates Instructor</span>
+                            <p style="font-size: 13px; color: var(--gray-light); margin-top: 8px;">RYT-500, 10 years experience</p>
+                        </div>
+                    </div>
+                    <div class="team-card animate-on-scroll animate-up">
+                        <div class="team-img">
+                            <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=400&q=80" alt="Trainer">
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Alex Thompson</h3>
+                            <span>HIIT and CrossFit Specialist</span>
+                            <p style="font-size: 13px; color: var(--gray-light); margin-top: 8px;">CrossFit L3, 8 years experience</p>
+                        </div>
+                    </div>
+                    <div class="team-card animate-on-scroll animate-up">
+                        <div class="team-img">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80" alt="Trainer">
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Lisa Park</h3>
+                            <span>Nutrition and Wellness Coach</span>
+                            <p style="font-size: 13px; color: var(--gray-light); margin-top: 8px;">MS Nutrition, 12 years experience</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- MEMBERSHIP PAGE -->
+    <div id="membership" class="page-section">
+        <section class="hero" style="height: 60vh;">
+            <div class="hero-bg" style="background: linear-gradient(135deg, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.7) 100%), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=80') center/cover;"></div>
+            <div class="hero-content" style="padding-top: 80px;">
+                <p class="hero-subtitle">Membership Plans</p>
+                <h1 class="hero-title" style="font-size: 56px;">Choose Your <span>Plan</span></h1>
+            </div>
+        </section>
+
+        <section class="pricing-section">
+            <div class="container">
+                <div class="section-header animate-on-scroll animate-up">
+                    <p class="section-tag">Pricing</p>
+                    <h2 class="section-title">Flexible <span>Memberships</span></h2>
+                    <p class="section-desc">Select the plan that fits your lifestyle and goals</p>
+                </div>
+                <div class="pricing-grid">
+                    <div class="pricing-card animate-on-scroll animate-up">
+                        <h3>Monthly</h3>
+                        <div class="pricing-price">1299<span>/month</span></div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> Full gym access</li>
+                            <li><i class="fas fa-check"></i> Locker room access</li>
+                            <li><i class="fas fa-check"></i> Free WiFi</li>
+                            <li><i class="fas fa-check"></i> 2 group classes/week</li>
+                            <li><i class="fas fa-check"></i> Fitness assessment</li>
+                        </ul>
+                        <a href="javascript:void(0)" class="btn-secondary" style="width: 100%; justify-content: center;" onclick="showPage('contact', event)">Get Started</a>
+                    </div>
+                    <div class="pricing-card animate-on-scroll animate-up">
+                        <h3>Quarterly</h3>
+                        <div class="pricing-price">2999<span>/3 months</span></div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> Full gym access</li>
+                            <li><i class="fas fa-check"></i> Locker room access</li>
+                            <li><i class="fas fa-check"></i> Free WiFi</li>
+                            <li><i class="fas fa-check"></i> Unlimited classes</li>
+                            <li><i class="fas fa-check"></i> 1 PT session/month</li>
+                        </ul>
+                        <a href="javascript:void(0)" class="btn-secondary" style="width: 100%; justify-content: center;" onclick="showPage('contact', event)">Get Started</a>
+                    </div>
+                    <div class="pricing-card popular animate-on-scroll animate-up">
+                        <h3>Half-Yearly</h3>
+                        <div class="pricing-price">5599<span>/6 months</span></div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> Full gym access</li>
+                            <li><i class="fas fa-check"></i> Premium locker</li>
+                            <li><i class="fas fa-check"></i> Pool and sauna</li>
+                            <li><i class="fas fa-check"></i> Unlimited classes</li>
+                            <li><i class="fas fa-check"></i> 2 PT sessions/month</li>
+                            <li><i class="fas fa-check"></i> Nutrition plan</li>
+                        </ul>
+                        <a href="javascript:void(0)" class="btn-primary" style="width: 100%; justify-content: center;" onclick="showPage('contact', event)">Get Started</a>
+                    </div>
+                    <div class="pricing-card animate-on-scroll animate-up">
+                        <h3>Annual</h3>
+                        <div class="pricing-price">9999<span>/year</span></div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> All Half-Yearly perks</li>
+                            <li><i class="fas fa-check"></i> Guest passes (2/month)</li>
+                            <li><i class="fas fa-check"></i> Priority booking</li>
+                            <li><i class="fas fa-check"></i> 4 PT sessions/month</li>
+                            <li><i class="fas fa-check"></i> Body composition scan</li>
+                            <li><i class="fas fa-check"></i> Exclusive events</li>
+                        </ul>
+                        <a href="javascript:void(0)" class="btn-secondary" style="width: 100%; justify-content: center;" onclick="showPage('contact', event)">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bmi-section">
+            <div class="container">
+                <div class="section-header animate-on-scroll animate-up">
+                    <p class="section-tag">Health Tool</p>
+                    <h2 class="section-title">BMI <span>Calculator</span></h2>
+                    <p class="section-desc">Check your Body Mass Index instantly</p>
+                </div>
+                <div class="bmi-container animate-on-scroll animate-up">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Height (cm)</label>
+                            <input type="number" id="bmiHeight" placeholder="e.g. 175">
+                        </div>
+                        <div class="form-group">
+                            <label>Weight (kg)</label>
+                            <input type="number" id="bmiWeight" placeholder="e.g. 70">
+                        </div>
+                    </div>
+                    <button class="btn-primary" style="width: 100%; justify-content: center; margin-top: 20px;" onclick="calculateBMI()">
+                        <i class="fas fa-calculator"></i> Calculate BMI
+                    </button>
+                    <div class="bmi-result" id="bmiResult">
+                        <div class="bmi-value" id="bmiValue">0.0</div>
+                        <div class="bmi-status" id="bmiStatus">Normal</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content animate-on-scroll animate-up">
+                    <h2 class="cta-title">Not Sure Which Plan?</h2>
+                    <p class="cta-desc">Book a free consultation with our fitness experts to find the perfect plan for your goals.</p>
+                    <a href="javascript:void(0)" class="btn-primary" onclick="showPage('contact', event)">
+                        <i class="fas fa-calendar-check"></i> Book Free Consultation
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PROGRAMS PAGE -->
+    <div id="programs" class="page-section">
+        <section class="hero" style="height: 60vh;">
+            <div class="hero-bg" style="background: linear-gradient(135deg, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.7) 100%), url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1920&q=80') center/cover;"></div>
+            <div class="hero-content" style="padding-top: 80px;">
+                <p class="hero-subtitle">Fitness Programs</p>
+                <h1 class="hero-title" style="font-size: 56px;">Expert <span>Programs</span></h1>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="section-header animate-on-scroll animate-up">
+                    <p class="section-tag">Programs</p>
+                    <h2 class="section-title">Our <span>Programs</span></h2>
+                    <p class="section-desc">Specialized training programs designed for every goal</p>
+                </div>
+                <div class="programs-grid">
+                    <div class="program-card animate-on-scroll animate-up">
+                        <div class="program-img">
+                            <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=600&q=80" alt="Strength Training">
+                        </div>
+                        <div class="program-content">
+                            <span class="program-tag">Strength</span>
+                            <h3>Strength Training</h3>
+                            <p>Build muscle, increase power, and develop functional strength with our comprehensive strength program.</p>
+                        </div>
+                    </div>
+                    <div class="program-card animate-on-scroll animate-up">
+                        <div class="program-img">
+                            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80" alt="Fat Loss">
+                        </div>
+                        <div class="program-content">
+                            <span class="program-tag">Weight Loss</span>
+                            <h3>Fat Loss Program</h3>
+                            <p>Science-backed approach to burning fat while preserving muscle mass with personalized nutrition.</p>
+                        </div>
+                    </div>
+                    <div class="program-card animate-on-scroll animate-up">
+                        <div class="program-img">
+                            <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=600&q=80" alt="Muscle Building">
+                        </div>
+                        <div class="program-content">
+                            <span class="program-tag">Hypertrophy</span>
+                            <h3>Muscle Building</h3>
+                            <p>Progressive overload training designed to maximize muscle growth and definition.</p>
+                        </div>
+                    </div>
+                    <div class="program-card animate-on-scroll animate-up">
+                        <div class="program-img">
+                            <img src="https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?w=600&q=80" alt="HIIT">
+                        </div>
+                        <div class="program-content">
+                            <span class="program-tag">Cardio</span>
+                            <h3>HIIT Training</h3>
+                            <p>High-intensity interval training for maximum calorie burn and cardiovascular fitness.</p>
+                        </div>
+                    </div>
+                    <div class="program-card animate-on-scroll animate-up">
+                        <div class="program-img">
+                            <img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=600&q=80" alt="CrossFit">
+                        </div>
+                        <div class="program-content">
+                            <span class="program-tag">Functional</span>
+                            <h3>CrossFit</h3>
+                            <p>Varied functional movements performed at high intensity for total body conditioning.</p>
+                        </div>
+                    </div>
+                    <div class="program-card animate-on-scroll animate-up">
+                        <div class="program-img">
+                            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80" alt="Yoga">
+                        </div>
+                        <div class="program-content">
+                            <span class="program-tag">Mind-Body</span>
+                            <h3>Yoga</h3>
+                            <p>Improve flexibility, balance, and mental clarity with our range of yoga styles.</p>
+                        </div>
+                    </div>
+                    <div class="program-card animate-on-scroll animate-up">
+                        <div class="program-img">
+                            <img src="https://images.unsplash.com/photo-1524594152303-9fd13543fe6e?w=600&q=80" alt="Zumba">
+                        </div>
+                        <div class="program-content">
+                            <span class="program-tag">Dance</span>
+                            <h3>Zumba</h3>
+                            <p>Dance your way to fitness with high-energy Latin-inspired cardio workouts.</p>
+                        </div>
+                    </div>
+                    <div class="program-card animate-on-scroll animate-up">
+                        <div class="program-img">
+                            <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=600&q=80" alt="Personal Training">
+                        </div>
+                        <div class="program-content">
+                            <span class="program-tag">1-on-1</span>
+                            <h3>Personal Training</h3>
+                            <p>One-on-one sessions with certified trainers tailored to your specific goals.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="trainers-section">
+            <div class="container">
+                <div class="section-header animate-on-scroll animate-up">
+                    <p class="section-tag">Expert Team</p>
+                    <h2 class="section-title">Certified <span>Trainers</span></h2>
+                    <p class="section-desc">Meet the professionals who will guide your journey</p>
+                </div>
+                <div class="team-grid">
+                    <div class="team-card animate-on-scroll animate-up">
+                        <div class="team-img">
+                            <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=400&q=80" alt="Trainer">
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Marcus Johnson</h3>
+                            <span>Head Strength Coach</span>
+                            <p style="font-size: 13px; color: var(--gray-light); margin-top: 8px;">NASM-CPT, NSCA-CSCS, 15 years experience</p>
+                        </div>
+                    </div>
+                    <div class="team-card animate-on-scroll animate-up">
+                        <div class="team-img">
+                            <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=400&q=80" alt="Trainer">
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Emma Rodriguez</h3>
+                            <span>Yoga and Pilates Instructor</span>
+                            <p style="font-size: 13px; color: var(--gray-light); margin-top: 8px;">RYT-500, Pilates Mat Certified, 10 years experience</p>
+                        </div>
+                    </div>
+                    <div class="team-card animate-on-scroll animate-up">
+                        <div class="team-img">
+                            <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=400&q=80" alt="Trainer">
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Alex Thompson</h3>
+                            <span>HIIT and CrossFit Specialist</span>
+                            <p style="font-size: 13px; color: var(--gray-light); margin-top: 8px;">CrossFit L3, ACE-CPT, 8 years experience</p>
+                        </div>
+                    </div>
+                    <div class="team-card animate-on-scroll animate-up">
+                        <div class="team-img">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80" alt="Trainer">
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Lisa Park</h3>
+                            <span>Nutrition and Wellness Coach</span>
+                            <p style="font-size: 13px; color: var(--gray-light); margin-top: 8px;">MS Nutrition, ISSA-SNS, 12 years experience</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content animate-on-scroll animate-up">
+                    <h2 class="cta-title">Start Your Transformation</h2>
+                    <p class="cta-desc">Get a personalized program designed specifically for your goals and fitness level.</p>
+                    <a href="javascript:void(0)" class="btn-primary" onclick="showPage('contact', event)">
+                        <i class="fas fa-user-plus"></i> Get Personal Training
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- GALLERY PAGE -->
+    <div id="gallery" class="page-section">
+        <section class="hero" style="height: 60vh;">
+            <div class="hero-bg" style="background: linear-gradient(135deg, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.7) 100%), url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1920&q=80') center/cover;"></div>
+            <div class="hero-content" style="padding-top: 80px;">
+                <p class="hero-subtitle">Gallery</p>
+                <h1 class="hero-title" style="font-size: 56px;">Our <span>Gallery</span></h1>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="section-header animate-on-scroll animate-up">
+                    <p class="section-tag">Visual Tour</p>
+                    <h2 class="section-title">Inside <span>PowerHouse</span></h2>
+                    <p class="section-desc">Take a visual tour of our world-class facility</p>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item animate-on-scroll animate-scale" onclick="openLightbox(this)">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80" alt="Gym Interior">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                    <div class="gallery-item animate-on-scroll animate-scale" onclick="openLightbox(this)">
+                        <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=800&q=80" alt="Weight Room">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                    <div class="gallery-item animate-on-scroll animate-scale" onclick="openLightbox(this)">
+                        <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=800&q=80" alt="Pool Area">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                    <div class="gallery-item animate-on-scroll animate-scale" onclick="openLightbox(this)">
+                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80" alt="Training Session">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                    <div class="gallery-item animate-on-scroll animate-scale" onclick="openLightbox(this)">
+                        <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=800&q=80" alt="Yoga Class">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                    <!-- <div class="gallery-item animate-on-scroll animate-scale" onclick="openLightbox(this)">
+                        <img src="https://images.unsplash.com/photo-1534258936925-c48947387e3b?w=800&q=80" alt="Cardio Area">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div> -->
+                    <div class="gallery-item animate-on-scroll animate-scale" onclick="openLightbox(this)">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80" alt="CrossFit Zone">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                    <div class="gallery-item animate-on-scroll animate-scale" onclick="openLightbox(this)">
+                        <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=800&q=80" alt="Personal Training">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials-section">
+            <div class="container">
+                <div class="section-header animate-on-scroll animate-up">
+                    <p class="section-tag">Transformations</p>
+                    <h2 class="section-title">Success <span>Stories</span></h2>
+                    <p class="section-desc">Real members, real results, real transformations</p>
+                </div>
+                <div class="stories-grid">
+                    <div class="story-card animate-on-scroll animate-up">
+                        <div class="story-before-after">
+                            <div class="before">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Before">
+                            </div>
+                            <div class="after">
+                                <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=400&q=80" alt="After">
+                            </div>
+                        </div>
+                        <div class="story-content">
+                            <h3>James Transformation</h3>
+                            <p>James lost 45 lbs and gained significant muscle mass through our strength and nutrition program.</p>
+                            <div class="story-stats">
+                                <div class="story-stat">
+                                    <div class="story-stat-value">-45</div>
+                                    <div class="story-stat-label">Lbs Lost</div>
+                                </div>
+                                <div class="story-stat">
+                                    <div class="story-stat-value">6</div>
+                                    <div class="story-stat-label">Months</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="story-card animate-on-scroll animate-up">
+                        <div class="story-before-after">
+                            <div class="before">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80" alt="Before">
+                            </div>
+                            <div class="after">
+                                <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=400&q=80" alt="After">
+                            </div>
+                        </div>
+                        <div class="story-content">
+                            <h3>Sarah's Journey</h3>
+                            <p>Sarah went from beginner to competitor, completing her first marathon after 8 months of training.</p>
+                            <div class="story-stats">
+                                <div class="story-stat">
+                                    <div class="story-stat-value">+15</div>
+                                    <div class="story-stat-label">Lbs Muscle</div>
+                                </div>
+                                <div class="story-stat">
+                                    <div class="story-stat-value">8</div>
+                                    <div class="story-stat-label">Months</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="story-card animate-on-scroll animate-up">
+                        <div class="story-before-after">
+                            <div class="before">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80" alt="Before">
+                            </div>
+                            <div class="after">
+                                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80" alt="After">
+                            </div>
+                        </div>
+                        <div class="story-content">
+                            <h3>David's Comeback</h3>
+                            <p>After a sports injury, David rebuilt his strength and surpassed his previous fitness levels.</p>
+                            <div class="story-stats">
+                                <div class="story-stat">
+                                    <div class="story-stat-value">100%</div>
+                                    <div class="story-stat-label">Recovery</div>
+                                </div>
+                                <div class="story-stat">
+                                    <div class="story-stat-value">12</div>
+                                    <div class="story-stat-label">Months</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contact" class="page-section">
+        <section class="hero" style="height: 60vh;">
+            <div class="hero-bg" style="background: linear-gradient(135deg, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.7) 100%), url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1920&q=80') center/cover;"></div>
+            <div class="hero-content" style="padding-top: 80px;">
+                <p class="hero-subtitle">Get In Touch</p>
+                <h1 class="hero-title" style="font-size: 56px;">Contact <span>Us</span></h1>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="animate-on-scroll animate-left">
+                        <div class="contact-info-grid">
+                            <div class="contact-info-card">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <h4>Address</h4>
+                                <p>Fitlean Fitness<br>Dwarka, New Delhi<br>Delhi 110075, India</p>
+                            </div>
+                            <div class="contact-info-card">
+                                <i class="fas fa-phone"></i>
+                                <h4>Phone</h4>
+                                <p>+91 98765 43210<br>+91 98765 43211</p>
+                            </div>
+                            <div class="contact-info-card">
+                                <i class="fas fa-envelope"></i>
+                                <h4>Email</h4>
+                                <p>info@fitleanfitness.in<br>support@fitleanfitness.in</p>
+                            </div>
+                            <div class="contact-info-card">
+                                <i class="fas fa-clock"></i>
+                                <h4>Hours</h4>
+                                <p>Mon-Sat: 5:30AM - 10:00PM<br>Sun: 6:00AM - 8:00PM</p>
+                            </div>
+                        </div>
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.1234567890123!2d77.0314659!3d28.6101395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d05c6e14ef013%3A0x8deda25cdadb1275!2sFitlean%20Fitness!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                    <div class="animate-on-scroll animate-right">
+                        <div class="contact-form">
+                            <h3 style="font-size: 28px; font-weight: 800; margin-bottom: 30px;">Send us a <span style="color: var(--electric-blue);">Message</span></h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>First Name</label>
+                                    <input type="text" id="waFirstName" placeholder="John">
+                                </div>
+                                <div class="form-group">
+                                    <label>Last Name</label>
+                                    <input type="text" id="waLastName" placeholder="Doe">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" id="waEmail" placeholder="john@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label>Phone</label>
+                                <input type="tel" id="waPhone" placeholder="+91 98765 43210">
+                            </div>
+                            <div class="form-group">
+                                <label>Subject</label>
+                                <select id="waSubject">
+                                    <option value="General Inquiry">General Inquiry</option>
+                                    <option value="Membership">Membership</option>
+                                    <option value="Personal Training">Personal Training</option>
+                                    <option value="Free Trial">Free Trial</option>
+                                    <option value="Feedback">Feedback</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Message</label>
+                                <textarea id="waMessage" placeholder="How can we help you?"></textarea>
+                            </div>
+                            <button class="btn-primary" style="width: 100%; justify-content: center;" onclick="sendWhatsAppMessage()">
+                                <i class="fab fa-whatsapp"></i> Send via WhatsApp
+                            </button>
+                            <p style="text-align: center; margin-top: 15px; font-size: 13px; color: var(--gray-light);">
+                                <i class="fas fa-lock" style="margin-right: 5px;"></i> Your message will be sent directly to our WhatsApp
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header animate-on-scroll animate-up">
+                    <p class="section-tag">FAQ</p>
+                    <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+                    <p class="section-desc">Find answers to common questions</p>
+                </div>
+                <div class="faq-container animate-on-scroll animate-up">
+                    <div class="faq-item active">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <h3>What are your operating hours?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We are open 24/7 for members with keycard access. Staffed hours are Monday through Friday from 5:00 AM to 11:00 PM, and Saturday through Sunday from 6:00 AM to 10:00 PM. Holiday hours may vary.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <h3>Do you offer a free trial?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! We offer a complimentary 7-day trial that includes full access to all gym facilities, group classes, and one personal training session. No credit card required to start your trial.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <h3>Can I freeze my membership?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely. Members can freeze their membership for up to 3 months per year for medical reasons, travel, or personal circumstances. A small administrative fee may apply depending on your membership plan.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <h3>What is your cancellation policy?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Monthly memberships can be cancelled with 30 days notice. Annual memberships can be cancelled with 60 days notice. We also offer a 30-day money-back guarantee for new members who are not satisfied.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <h3>Do you have locker rooms and showers?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we have premium locker rooms with secure digital lockers, spacious showers with premium toiletries, saunas, and steam rooms. Towel service is included with all membership plans.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            <h3>Are personal trainers included in the membership?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Personal training sessions are included based on your membership tier. Monthly members get 2 sessions per month, while Annual members receive 4 sessions per month. Additional sessions can be purchased at member rates.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content animate-on-scroll animate-up">
+                    <h2 class="cta-title">Ready to Transform?</h2>
+                    <p class="cta-desc">Book your free trial today and experience the PowerHouse difference.</p>
+                    <a href="#" class="btn-primary" onclick="alert('Free trial booking form would open here. Contact us directly!')">
+                        <i class="fas fa-calendar-check"></i> Book Free Trial
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></div>
+        <img src="" alt="Gallery Image" id="lightboxImg">
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Power<span>House</span> Fitness</h3>
+                    <p>Transforming lives through fitness since 2012. Join our community of champions and start your journey to a stronger, healthier you.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="javascript:void(0)" onclick="showPage('home', event)"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('about', event)"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('membership', event)"><i class="fas fa-chevron-right"></i> Membership</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('programs', event)"><i class="fas fa-chevron-right"></i> Programs</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('gallery', event)"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('contact', event)"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Programs</h4>
+                    <ul>
+                        <li><a href="javascript:void(0)" onclick="showPage('programs', event)"><i class="fas fa-chevron-right"></i> Strength Training</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('programs', event)"><i class="fas fa-chevron-right"></i> Fat Loss</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('programs', event)"><i class="fas fa-chevron-right"></i> Muscle Building</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('programs', event)"><i class="fas fa-chevron-right"></i> HIIT</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('programs', event)"><i class="fas fa-chevron-right"></i> Yoga</a></li>
+                        <li><a href="javascript:void(0)" onclick="showPage('programs', event)"><i class="fas fa-chevron-right"></i> CrossFit</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Newsletter</h4>
+                    <div class="footer-newsletter">
+                        <p>Subscribe for fitness tips, exclusive offers, and updates.</p>
+                        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+                            <input type="email" placeholder="Your email" required>
+                            <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>2026 PowerHouse Fitness. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/919958216959" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Navigation
+        function showPage(pageId, evt) {
+            if (evt) evt.preventDefault();
+
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('onclick') && link.getAttribute('onclick').includes("'" + pageId + "'")) {
+                    link.classList.add('active');
+                }
+            });
+
+            window.scrollTo(0, 0);
+            document.getElementById('navLinks').classList.remove('active');
+            document.getElementById('hamburger').classList.remove('active');
+
+            setTimeout(() => {
+                initScrollAnimations();
+                initCounters();
+            }, 100);
+        }
+
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+            document.getElementById('hamburger').classList.toggle('active');
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll animations
+        function initScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Counter animation
+        function initCounters() {
+            const counters = document.querySelectorAll('.counter-number');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+
+                const updateCounter = () => {
+                    current += step;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current).toLocaleString();
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target.toLocaleString() + '+';
+                    }
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            updateCounter();
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                observer.observe(counter);
+            });
+        }
+
+        // Lightbox
+        function openLightbox(element) {
+            const img = element.querySelector('img');
+            document.getElementById('lightboxImg').src = img.src;
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // FAQ toggle
+        function toggleFaq(element) {
+            const item = element.parentElement;
+            const wasActive = item.classList.contains('active');
+
+            document.querySelectorAll('.faq-item').forEach(faq => {
+                faq.classList.remove('active');
+            });
+
+            if (!wasActive) {
+                item.classList.add('active');
+            }
+        }
+
+        // BMI Calculator
+        function calculateBMI() {
+            const height = parseFloat(document.getElementById('bmiHeight').value);
+            const weight = parseFloat(document.getElementById('bmiWeight').value);
+
+            if (!height || !weight) {
+                alert('Please enter both height and weight');
+                return;
+            }
+
+            const bmi = (weight / ((height / 100) ** 2)).toFixed(1);
+            let status = '';
+            let color = '';
+
+            if (bmi < 18.5) {
+                status = 'Underweight';
+                color = '#FFD700';
+            } else if (bmi < 25) {
+                status = 'Normal Weight';
+                color = '#00FF00';
+            } else if (bmi < 30) {
+                status = 'Overweight';
+                color = '#FF8C00';
+            } else {
+                status = 'Obese';
+                color = '#FF4444';
+            }
+
+            document.getElementById('bmiValue').textContent = bmi;
+            document.getElementById('bmiStatus').textContent = status;
+            document.getElementById('bmiStatus').style.color = color;
+            document.getElementById('bmiResult').classList.add('active');
+        }
+
+        // Particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            if (!container) return;
+
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        // WhatsApp Message Sender
+        function sendWhatsAppMessage() {
+            const firstName = document.getElementById('waFirstName').value.trim();
+            const lastName = document.getElementById('waLastName').value.trim();
+            const email = document.getElementById('waEmail').value.trim();
+            const phone = document.getElementById('waPhone').value.trim();
+            const subject = document.getElementById('waSubject').value;
+            const message = document.getElementById('waMessage').value.trim();
+
+            if (!firstName || !lastName) {
+                alert('Please enter your first and last name.');
+                return;
+            }
+            if (!phone) {
+                alert('Please enter your phone number.');
+                return;
+            }
+
+            const fullName = firstName + ' ' + lastName;
+            let whatsappText = `*New Message from PowerHouse Fitness Website*%0A%0A`;
+            whatsappText += `*Name:* ${fullName}%0A`;
+            if (email) whatsappText += `*Email:* ${email}%0A`;
+            if (phone) whatsappText += `*Phone:* ${phone}%0A`;
+            whatsappText += `*Subject:* ${subject}%0A`;
+            if (message) whatsappText += `%0A*Message:*%0A${message}%0A`;
+            whatsappText += `%0A-------------------%0A`;
+            whatsappText += `Sent from: PowerHouse Fitness Website`;
+
+            const whatsappNumber = '919958216959';
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappText}`;
+
+            window.open(whatsappURL, '_blank');
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            initScrollAnimations();
+            initCounters();
+            createParticles();
+        });
+    </script>
+</body>
+</html>
