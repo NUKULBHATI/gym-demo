@@ -21,6 +21,30 @@
             --gray-mid: #2A2A2A;
             --gray-light: #888888;
 
+            /* Background & Text Colors */
+            --bg-primary: #0A0A0A;
+            --bg-secondary: #1A1A1A;
+            --bg-card: #1A1A1A;
+            --text-primary: #FFFFFF;
+            --text-secondary: #888888;
+            --border-color: rgba(255, 255, 255, 0.05);
+            --nav-bg: rgba(10, 10, 10, 0.95);
+        }
+
+        /* Light Mode Variables */
+        body.light-mode {
+            --bg-primary: #F5F5F5;
+            --bg-secondary: #FFFFFF;
+            --bg-card: #FFFFFF;
+            --text-primary: #1A1A1A;
+            --text-secondary: #555555;
+            --border-color: rgba(0, 0, 0, 0.08);
+            --nav-bg: rgba(255, 255, 255, 0.95);
+        }
+
+        body.light-mode {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
         }
 
         * {
@@ -309,6 +333,10 @@
 
         .hamburger.active span:nth-child(3) {
             transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .hamburger span {
+            background: var(--white);
         }
 
         .dark-mode .hamburger span {
@@ -1804,6 +1832,301 @@
             box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
         }
 
+        /* Theme Toggle Button */
+        .theme-toggle {
+            background: rgb(245, 246, 247);
+            border: 2px solid var(--electric-blue);
+            color: var(--electric-blue);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            margin-right: 10px;
+        }
+
+        .theme-toggle:hover {
+            background: var(--white);
+            color: var(--matte-black);
+            transform: rotate(180deg);
+            box-shadow: 0 0 20px rgb(238, 241, 241);
+        }
+
+        /* Light Mode Specific Styles */
+        body.light-mode .navbar.scrolled {
+            background: var(--nav-bg);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        body.light-mode .hero-bg {
+            background: linear-gradient(135deg, rgba(245, 245, 245, 0.9) 0%, rgba(245, 245, 245, 0.7) 50%, rgba(0, 191, 255, 0.1) 100%),
+                url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&q=80') center/cover;
+        }
+
+        body.light-mode .facility-card,
+        body.light-mode .testimonial-card,
+        body.light-mode .team-card,
+        body.light-mode .program-card,
+        body.light-mode .story-card,
+        body.light-mode .tip-card,
+        body.light-mode .contact-form,
+        body.light-mode .contact-info-card,
+        body.light-mode .mission-card,
+        body.light-mode .vision-card,
+        body.light-mode .faq-item,
+        body.light-mode .bmi-container,
+        body.light-mode .highlight-card,
+        body.light-mode .pricing-card,
+        body.light-mode .counter-card,
+        body.light-mode .footer {
+            background: var(--bg-card);
+            border-color: var(--border-color);
+        }
+
+        body.light-mode .section-desc,
+        body.light-mode .facility-content p,
+        body.light-mode .testimonial-text,
+        body.light-mode .about-content p,
+        body.light-mode .mission-card p,
+        body.light-mode .vision-card p,
+        body.light-mode .faq-answer p,
+        body.light-mode .tip-card p,
+        body.light-mode .story-content p,
+        body.light-mode .highlight-card p,
+        body.light-mode .footer-brand p,
+        body.light-mode .footer-column ul li a {
+            color: var(--text-secondary);
+        }
+
+        body.light-mode .form-group input,
+        body.light-mode .form-group textarea,
+        body.light-mode .form-group select,
+        body.light-mode .newsletter-form input {
+            background: var(--bg-primary);
+            border-color: var(--border-color);
+            color: var(--text-primary);
+        }
+
+        body.light-mode .map-container iframe {
+            filter: grayscale(0) invert(0) contrast(1);
+        }
+
+        body.light-mode .btn-secondary {
+            border-color: rgba(0, 0, 0, 0.2);
+            color: var(--text-primary);
+        }
+
+        body.light-mode .btn-secondary:hover {
+            border-color: var(--electric-blue);
+            color: var(--electric-blue);
+        }
+
+        body.light-mode .cta-section::before {
+            background: radial-gradient(circle, rgba(0, 191, 255, 0.08) 0%, transparent 70%);
+        }
+
+        body.light-mode .about-img-secondary {
+            border-color: var(--bg-primary);
+        }
+
+        body.light-mode .scroll-indicator i {
+            color: var(--electric-blue);
+        }
+
+        body.light-mode .nav-links {
+            background: var(--bg-secondary);
+        }
+
+        body.light-mode .team-social a {
+            background: var(--electric-blue);
+            color: var(--matte-black);
+        }
+
+        body.light-mode .gallery-overlay {
+            background: rgba(0, 191, 255, 0.2);
+        }
+
+        body.light-mode .bmi-result {
+            background: var(--bg-primary);
+        }
+
+        body.light-mode .stars {
+            color: #FFA500;
+        }
+
+        body.light-mode .testimonial-author-info span {
+            color: var(--electric-blue);
+        }
+
+        body.light-mode .story-before-after .before::after {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+        }
+
+        body.light-mode ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+
+        body.light-mode .logo {
+            color: var(--text-primary);
+        }
+
+        body.light-mode .nav-links a {
+            color: var(--text-primary);
+        }
+
+        body.light-mode .nav-links a:hover {
+            color: var(--electric-blue);
+        }
+
+        body.light-mode .section-title,
+        body.light-mode .facility-content h3,
+        body.light-mode .testimonial-author-info h4,
+        body.light-mode .about-content h2,
+        body.light-mode .mission-card h3,
+        body.light-mode .vision-card h3,
+        body.light-mode .team-info h3,
+        body.light-mode .story-content h3,
+        body.light-mode .tip-card h3,
+        body.light-mode .highlight-card h3,
+        body.light-mode .pricing-card h3,
+        body.light-mode .contact-info-card h4,
+        body.light-mode .faq-question h3,
+        body.light-mode .footer-column h4,
+        body.light-mode .cta-title,
+        body.light-mode .about-feature span {
+            color: var(--text-primary);
+        }
+
+        body.light-mode .counter-label,
+        body.light-mode .team-info span,
+        body.light-mode .program-tag,
+        body.light-mode .story-stat-label {
+            color: var(--text-secondary);
+        }
+
+        body.light-mode .counter-number,
+        body.light-mode .story-stat-value,
+        body.light-mode .pricing-price {
+            color: var(--electric-blue);
+        }
+
+        body.light-mode .btn-nav {
+            background: var(--electric-blue);
+            color: var(--matte-black);
+            border-color: var(--electric-blue);
+        }
+
+        body.light-mode .btn-nav:hover {
+            background: transparent;
+            color: var(--electric-blue);
+        }
+
+        body.light-mode .hamburger span {
+            background: var(--text-primary);
+        }
+
+        body.light-mode .lightbox {
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        body.light-mode .lightbox-close {
+            color: var(--text-primary);
+        }
+
+        body.light-mode .lightbox-close:hover {
+            color: var(--electric-blue);
+        }
+
+        body.light-mode .footer-bottom {
+            border-color: var(--border-color);
+        }
+
+        body.light-mode .footer-bottom p,
+        body.light-mode .footer-bottom-links a {
+            color: var(--text-secondary);
+        }
+
+        body.light-mode .footer-bottom-links a:hover {
+            color: var(--electric-blue);
+        }
+
+        body.light-mode .newsletter-form button {
+            background: var(--electric-blue);
+            color: var(--matte-black);
+        }
+
+        body.light-mode .newsletter-form button:hover {
+            background: var(--neon-cyan);
+        }
+
+        body.light-mode .footer-social a {
+            background: rgba(0, 0, 0, 0.05);
+            border-color: var(--border-color);
+            color: var(--text-primary);
+        }
+
+        body.light-mode .footer-social a:hover {
+            background: var(--electric-blue);
+            color: var(--matte-black);
+            border-color: var(--electric-blue);
+        }
+
+        body.light-mode .pricing-features li {
+            border-color: var(--border-color);
+            color: var(--text-secondary);
+        }
+
+        body.light-mode .faq-question:hover {
+            background: rgba(0, 191, 255, 0.05);
+        }
+
+        body.light-mode .tip-number {
+            color: rgba(0, 191, 255, 0.15);
+        }
+
+        body.light-mode .program-content h3,
+        body.light-mode .program-content p {
+            color: var(--text-primary);
+        }
+
+        body.light-mode .program-content p {
+            color: var(--text-secondary);
+        }
+
+        body.light-mode .contact-form h3 {
+            color: var(--text-primary);
+        }
+
+        body.light-mode .form-group label {
+            color: var(--text-secondary);
+        }
+
+        body.light-mode .bmi-status {
+            color: var(--text-primary);
+        }
+
+        body.light-mode .whatsapp-float {
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .theme-toggle {
+                margin-right: 10px;
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+
+            body.light-mode .nav-links a {
+                color: var(--text-primary);
+            }
+        }
+
         @media (max-width: 1200px) {
 
             .facilities-grid,
@@ -1952,6 +2275,9 @@
                 <a href="javascript:void(0)" onclick="showPage('contact', event)">Contact</a>
                 <a href="javascript:void(0)" class="btn-nav" onclick="showPage('membership', event)">Join Now</a>
             </div>
+            <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle Dark/Light Mode">
+                <i class="fas fa-sun" id="themeIcon"></i>
+            </button>
             <div class="hamburger" id="hamburger" onclick="toggleMenu()">
                 <span></span>
                 <span></span>
@@ -3173,7 +3499,39 @@
     </a>
 
     <script>
-        // Navigation
+        // ============ THEME TOGGLE ============
+        function toggleTheme() {
+            const body = document.body;
+            const icon = document.getElementById('themeIcon');
+            const isLight = body.classList.toggle('light-mode');
+
+            if (isLight) {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            } else {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            }
+
+            setTimeout(() => {
+                initScrollAnimations();
+            }, 100);
+        }
+
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const icon = document.getElementById('themeIcon');
+
+            if (savedTheme === 'light') {
+                document.body.classList.add('light-mode');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        }
+
+        // ============ NAVIGATION ============
         function showPage(pageId, evt) {
             if (evt) evt.preventDefault();
 
@@ -3204,7 +3562,7 @@
             document.getElementById('hamburger').classList.toggle('active');
         }
 
-        // Navbar scroll effect
+        // ============ NAVBAR SCROLL ============
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
             if (window.scrollY > 50) {
@@ -3214,7 +3572,7 @@
             }
         });
 
-        // Scroll animations
+        // ============ SCROLL ANIMATIONS ============
         function initScrollAnimations() {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -3229,7 +3587,7 @@
             });
         }
 
-        // Counter animation
+        // ============ COUNTER ANIMATION ============
         function initCounters() {
             const counters = document.querySelectorAll('.counter-number');
             counters.forEach(counter => {
@@ -3261,7 +3619,7 @@
             });
         }
 
-        // Lightbox
+        // ============ LIGHTBOX ============
         function openLightbox(element) {
             const img = element.querySelector('img');
             document.getElementById('lightboxImg').src = img.src;
@@ -3274,7 +3632,7 @@
             document.body.style.overflow = 'auto';
         }
 
-        // FAQ toggle
+        // ============ FAQ TOGGLE ============
         function toggleFaq(element) {
             const item = element.parentElement;
             const wasActive = item.classList.contains('active');
@@ -3288,7 +3646,7 @@
             }
         }
 
-        // BMI Calculator
+        // ============ BMI CALCULATOR ============
         function calculateBMI() {
             const height = parseFloat(document.getElementById('bmiHeight').value);
             const weight = parseFloat(document.getElementById('bmiWeight').value);
@@ -3322,7 +3680,7 @@
             document.getElementById('bmiResult').classList.add('active');
         }
 
-        // Particles
+        // ============ PARTICLES ============
         function createParticles() {
             const container = document.getElementById('particles');
             if (!container) return;
@@ -3338,7 +3696,7 @@
             }
         }
 
-        // WhatsApp Message Sender
+        // ============ WHATSAPP MESSAGE ============
         function sendWhatsAppMessage() {
             const firstName = document.getElementById('waFirstName').value.trim();
             const lastName = document.getElementById('waLastName').value.trim();
@@ -3372,8 +3730,9 @@
             window.open(whatsappURL, '_blank');
         }
 
-        // Initialize
+        // ============ INITIALIZE ============
         document.addEventListener('DOMContentLoaded', () => {
+            loadTheme();
             initScrollAnimations();
             initCounters();
             createParticles();
